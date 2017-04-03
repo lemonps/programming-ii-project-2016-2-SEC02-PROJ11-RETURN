@@ -1,6 +1,6 @@
 <%-- 
-    Document   : test
-    Created on : Mar 31, 2017, 10:39:37 AM
+    Document   : test1
+    Created on : Apr 3, 2017, 7:50:34 PM
     Author     : Lemon
 --%>
 
@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Result Page</title>
     </head>
     <body>
-          <h1>Uploaded !!</h1>
+        <h1>Edited Success!</h1>
     </body>
 </html>

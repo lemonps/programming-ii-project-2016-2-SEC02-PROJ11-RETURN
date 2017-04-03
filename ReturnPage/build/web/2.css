@@ -1,0 +1,24 @@
+ #pictures{
+ 	background: white;
+}
+#videos{
+	margin:50px;
+}
+#nav{
+	color: white;
+	background-color: grey;
+
+
+}
+a:link,a:visited{
+		color: white;
+		margin:50px;
+		font-size: 25px;
+	}
+	body{
+		background: palegreen;
+	}
+	#contents{
+		margin: 50px;
+
+	}

@@ -1,9 +1,6 @@
-<%-- 
-    Document   : test
-    Created on : Mar 31, 2017, 10:39:37 AM
-    Author     : Lemon
---%>
 
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +9,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-          <h1>Uploaded !!</h1>
+        <p>${msg}</p>
+        <c:forEach items="${videos}" var="video" varStatus="vs">
+                    <p>${vs.count}  ${video.toString()}</p>
+         </c:forEach>
     </body>
 </html>

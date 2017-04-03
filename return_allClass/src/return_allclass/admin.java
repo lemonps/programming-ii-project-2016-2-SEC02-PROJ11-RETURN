@@ -11,18 +11,6 @@ public class admin {
     public admin() {
     }
 
-    public static void EditSubjectById(int id, String name, String co_id) throws SQLException, ClassNotFoundException, NullPointerException {
-        Connection con = ConnectionBuilder.getConnection();
-        Statement st = con.createStatement();
-        String sql = "update subject set name=?,course_id=? where id=?";
-        PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, name);
-            ps.setString(2, co_id);
-            ps.setInt(3, id);
-        int rs = ps.executeUpdate();
-            System.out.println(rs + " updated !!");
-    }
-
     public String getUsername() {
         return username;
     }
@@ -47,8 +35,6 @@ public class admin {
         this.id = id;
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        admin.EditSubjectById(1, "a", "b");
-    }
+  
 
 }

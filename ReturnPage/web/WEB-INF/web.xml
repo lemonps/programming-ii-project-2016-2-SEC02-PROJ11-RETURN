@@ -16,6 +16,14 @@
         <servlet-name>Test</servlet-name>
         <servlet-class>model.Test</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditSubject</servlet-name>
+        <servlet-class>model.EditSubject</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateDB</servlet-name>
+        <servlet-class>CreateDB</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Search</servlet-name>
         <url-pattern>/Search</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>Test</servlet-name>
         <url-pattern>/Test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditSubject</servlet-name>
+        <url-pattern>/EditSubject</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateDB</servlet-name>
+        <url-pattern>/CreateDB</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
