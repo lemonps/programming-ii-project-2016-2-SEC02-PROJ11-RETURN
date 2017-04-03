@@ -18,11 +18,11 @@
     </servlet>
     <servlet>
         <servlet-name>EditSubject</servlet-name>
-        <servlet-class>model.EditSubject</servlet-class>
+        <servlet-class>EditSubject</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CreateDB</servlet-name>
-        <servlet-class>CreateDB</servlet-class>
+        <servlet-name>CreateSub</servlet-name>
+        <servlet-class>non.CreateSub</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Search</servlet-name>
@@ -45,8 +45,8 @@
         <url-pattern>/EditSubject</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CreateDB</servlet-name>
-        <url-pattern>/CreateDB</url-pattern>
+        <servlet-name>CreateSub</servlet-name>
+        <url-pattern>/CreateSub</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

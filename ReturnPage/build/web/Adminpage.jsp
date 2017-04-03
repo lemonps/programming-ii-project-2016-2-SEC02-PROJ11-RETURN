@@ -1,15 +1,11 @@
 <%-- 
-    Document   : AdminPage
-    Created on : Apr 3, 2017, 9:21:41 PM
+    Document   : Adminpage
+    Created on : Mar 30, 2017, 4:21:42 PM
     Author     : Lemon
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-
 <html>
     <head>  
-        <title>Admin Page</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
 
     </head>
@@ -25,18 +21,22 @@
         <div>   
            <h2>Edit Subject</h2>
             <form method="post" action="EditSubject"> 
-               
-                <span> id </span> <input type="number" name="id"><br><br>
-                <span>Edit name to</span> &nbsp <input type="text" name="name" ><br><br>                
-                <span>Edit course_id to</span> &nbsp <input type="text" name="course_id" ><br><br>
-                
-                <input type="submit" name="submit" value="OK">                    
+                           
+                <input type="text" name="name" >                
+                <input type="text" name="course_id" >
+                <input type="submit" name="submit">                    
            
             </form>                      
         </div>
+        <div>
+                   <h2>Create Subject</h2>
+            <form method="post" action="CreateSub"> 
+                <input type="text" name="id">               
+                <input type="text" name="name" >                
+                <input type="text" name="course_id" >
+                <input type="submit" name="submit">                    
+            </form>                      
+        </div>
    
-        
     </body>
 </html>
-
-  

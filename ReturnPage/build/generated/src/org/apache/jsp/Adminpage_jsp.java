@@ -30,7 +30,7 @@ public final class Adminpage_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -42,13 +42,9 @@ public final class Adminpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("\n");
       out.write("<html>\n");
       out.write("    <head>  \n");
-      out.write("        <title>Admin Page</title>\n");
+      out.write("        <title>TODO supply a title</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("\n");
       out.write("    </head>\n");
@@ -64,20 +60,25 @@ public final class Adminpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div>   \n");
       out.write("           <h2>Edit Subject</h2>\n");
       out.write("            <form method=\"post\" action=\"EditSubject\"> \n");
-      out.write("               \n");
-      out.write("                <span> id </span> <input type=\"number\" name=\"id\"><br><br>\n");
-      out.write("                <span>Edit name to</span> &nbsp <input type=\"text\" name=\"name\" ><br><br>                \n");
-      out.write("                <span>Edit course_id to</span> &nbsp <input type=\"text\" name=\"course_id\" ><br><br>\n");
-      out.write("                \n");
-      out.write("                <input type=\"submit\" name=\"submit\" value=\"OK\">                    \n");
+      out.write("                           \n");
+      out.write("                <input type=\"text\" name=\"name\" >                \n");
+      out.write("                <input type=\"text\" name=\"course_id\" >\n");
+      out.write("                <input type=\"submit\" name=\"submit\">                    \n");
       out.write("           \n");
+      out.write("            </form>                      \n");
+      out.write("        </div>\n");
+      out.write("        <div>\n");
+      out.write("                   <h2>Create Subject</h2>\n");
+      out.write("            <form method=\"post\" action=\"CreateSub\"> \n");
+      out.write("                <input type=\"text\" name=\"id\">               \n");
+      out.write("                <input type=\"text\" name=\"name\" >                \n");
+      out.write("                <input type=\"text\" name=\"course_id\" >\n");
+      out.write("                <input type=\"submit\" name=\"submit\">                    \n");
       out.write("            </form>                      \n");
       out.write("        </div>\n");
       out.write("   \n");
       out.write("    </body>\n");
       out.write("</html>\n");
-      out.write("\n");
-      out.write("  ");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
