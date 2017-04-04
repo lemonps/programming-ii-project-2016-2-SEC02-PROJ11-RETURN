@@ -1,7 +1,7 @@
 <%-- 
-    Document   : test1
-    Created on : Apr 3, 2017, 7:50:34 PM
-    Author     : Lemon
+    Document   : test2
+    Created on : Apr 3, 2017, 11:27:21 PM
+    Author     : homun
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Edited Success!</h1>
+        <h1>Created</h1>
     </body>
 </html>
