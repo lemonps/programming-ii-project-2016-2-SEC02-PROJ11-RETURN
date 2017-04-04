@@ -1,11 +1,5 @@
 package model;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.*;
 import java.nio.file.Paths;
 import javax.servlet.ServletException;
@@ -16,41 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-/**
- *
- * @author Lemon
- * 
- * 
- */  
 @MultipartConfig
 public class UploadFile extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+     protected void UploadVideo(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("video/mp4");
-        Part filePart = request.getPart("File");
+        response.setContentType("text/html;charset=UTF-8");
+        Part filePart = request.getPart("File"); 
 
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); 
         InputStream fileContent = filePart.getInputStream(); 
         OutputStream ops = null;
         try {
-            ops = new FileOutputStream(new File("C:\\Users\\leno\\Desktop\\ReturnPage\\web\\" + fileName));
+            ops = new FileOutputStream(new File("D:\\Pro_return\\ReturnPage" + fileName));
             System.out.println("upload success");
             byte[] b = new byte[1024]; 
-            int read = fileContent.read(b);
+            int read = fileContent.read(b); 
             while (read != -1) {
-                ops.write(b, 0, read); 
+                ops.write(b, 0, read);
             }
         } catch (FileNotFoundException e) {
             System.out.println(e);
@@ -78,7 +55,7 @@ public class UploadFile extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        UploadVideo(request, response);
     }
 
     /**
@@ -92,7 +69,7 @@ public class UploadFile extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        UploadVideo(request, response);
     }
 
     /**

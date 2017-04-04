@@ -25,16 +25,14 @@
         <div>   
            <h2>Edit Subject</h2>
             <form method="post" action="EditSubject"> 
-               
-                <span> id </span> <input type="number" name="id"><br><br>
-                <span>Edit name to</span> &nbsp <input type="text" name="name" ><br><br>                
-                <span>Edit course_id to</span> &nbsp <input type="text" name="course_id" ><br><br>
-                
-                <input type="submit" name="submit" value="OK">                    
+                id :<input type="number" name="id" >  <br>                 
+                Edit name to :<input type="text" name="name" >     <br>           
+                Edit course_id to :<input type="text" name="course_id" >   <br>
+                <input type="submit" name="submit" value="ok">                    
            
             </form>                      
         </div>
-   
+        
         
     </body>
 </html>
