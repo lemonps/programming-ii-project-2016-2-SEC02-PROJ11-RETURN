@@ -60,7 +60,6 @@ public final class Adminpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div>   \n");
       out.write("           <h2>Edit Subject</h2>\n");
       out.write("            <form method=\"post\" action=\"EditSubject\"> \n");
-<<<<<<< HEAD
       out.write("                ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${subject.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(" <br>              \n");
@@ -72,7 +71,6 @@ public final class Adminpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\n");
       out.write("        \n");
       out.write("        \n");
-=======
       out.write("                           \n");
       out.write("                <input type=\"text\" name=\"name\" >                \n");
       out.write("                <input type=\"text\" name=\"course_id\" >\n");
@@ -90,7 +88,6 @@ public final class Adminpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </form>                      \n");
       out.write("        </div>\n");
       out.write("   \n");
->>>>>>> 573f8281b06a0048c007508af47ae0abd721aa27
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

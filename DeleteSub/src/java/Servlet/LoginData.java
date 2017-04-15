@@ -7,21 +7,21 @@ package Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
+import java.sql.*;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author WIN10_M7
  */
-public class Delete extends HttpServlet {
+public class LoginData extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,20 +34,24 @@ public class Delete extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        //ตัวที่รับข้อมูลว่าเราส่งอะไรไปชื่อว่าrequest
-        String[] inputToDelete = request.getParameterValues("DeleteBox");//เป็นปุ่มคลิก ที่ปุ่มส่งข้อมูลมาเป็นString
-        Connection con = ConnectionBuilder.getConnection();
-        if(inputToDelete!=null){
-            for(int i = 0;i<inputToDelete.length;i++){
-                try {
-                    PreparedStatement statement = con.prepareStatement("delete from subject where id = ?");
-                    statement.setInt(1,Integer.parseInt(inputToDelete[i])); 
-                    statement.executeUpdate();
-                } catch (SQLException ex) {
-                    System.out.println("คำสั่งผิด");
+        String username = request.getParameter("username");//getParameter คือการเอามาจากhtmlที่มีname ชื่อว่า username
+        String password = request.getParameter("password");//เป็นปุ่มคลิก ที่ปุ่มส่งข้อมูลมาเป็นString
+        try {
+            response.setContentType("text/html;charset=UTF-8");
+            Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement statement = con.prepareStatement("select * from user");
+            ResultSet rs = statement.executeQuery();
+            
+            while(rs.next()){
+                if(rs.getString("username").equals(username)&rs.getString("password").equals(password)){
+                    //login ถูกต้องแล้วน้ะะ
+                    
+                
                 }
             }
+            
+        } catch (SQLException ex) {
+            System.out.println("ต่อผิด");
         }
     }
 

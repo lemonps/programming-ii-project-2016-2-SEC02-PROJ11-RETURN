@@ -11,16 +11,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Delete</title>
     </head>
     <body>
         <form action="Delete">
         <table border = "1">
-            <tr><th>ID</th><th>Your Name</th><th>Surname</th><th>Delete</th></tr>
+            <tr><th>ID</th><th>Name</th><th>Course_id</th><th>Delete</th></tr>
             
             <%ResultSet rs = ShowData.showData();%>
             <%while(rs.next()){%>
-            <tr><td><%out.print(rs.getInt("id"));%></td><td><%out.print(rs.getString("yourname"));%></td><td><%out.print(rs.getString("surname"));%></td>
+            <tr><td><%out.print(rs.getInt("id"));%></td><td><%out.print(rs.getString("name"));%></td><td><%out.print(rs.getString("course_id"));%></td>
                 <td><input type="checkbox" name = "DeleteBox" value="<%out.print(rs.getInt("id"));%>"></td> 
             </tr>
             <%}%> 

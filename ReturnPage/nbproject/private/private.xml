@@ -2,23 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/D:/Pro_return/ReturnPage/web/Adminpage.jsp</file>
-            <file>file:/D:/Pro_return/ReturnPage/web/result.jsp</file>
-            <file>file:/D:/Pro_return/ReturnPage/src/java/model/EditSubject.java</file>
-            <file>file:/D:/Pro_return/ReturnPage/src/java/model/SeachVideo.java</file>
-            <file>file:/D:/Pro_return/ReturnPage/web/homepage.jsp</file>
-=======
-            <file>file:/C:/Users/homun/Desktop/ReturnPage2/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/homun/Desktop/ReturnPage2/src/java/non/CreateSub.java</file>
-            <file>file:/C:/Users/homun/Desktop/ReturnPage2/web/Adminpage.jsp</file>
-            <file>file:/C:/Users/homun/Desktop/ReturnPage2/src/java/model/admin.java</file>
-            <file>file:/C:/Users/homun/Desktop/ReturnPage2/src/java/EditSubject.java</file>
-            <file>file:/C:/Users/homun/Desktop/ReturnPage2/web/test2.jsp</file>
-            <file>file:/C:/Users/homun/Desktop/ReturnPage2/web/homepage.jsp</file>
-            <file>file:/C:/Users/homun/Desktop/ReturnPage2/nbproject/build-impl.xml</file>
->>>>>>> 573f8281b06a0048c007508af47ae0abd721aa27
-        </group>
+        <group/>
     </open-files>
 </project-private>

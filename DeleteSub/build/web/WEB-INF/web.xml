@@ -4,9 +4,33 @@
         <servlet-name>Delete</servlet-name>
         <servlet-class>Servlet.Delete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegisterData</servlet-name>
+        <servlet-class>Servlet.RegisterData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>Servlet.LoginData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>Servlet.NewServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Delete</servlet-name>
         <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterData</servlet-name>
+        <url-pattern>/RegisterData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
