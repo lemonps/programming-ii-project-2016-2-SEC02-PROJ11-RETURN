@@ -15,7 +15,7 @@ public class videos {
     
     
      public static List<videos> findByTitle(String tname) {
-        List<videos> videos = null;
+        List<videos> video = null;
         try {
             Connection con = ConnectionBuilder.getConnection();
             String sql = "select * from videos where title like ?";
@@ -30,22 +30,26 @@ public class videos {
                 v.setDesc(rs.getString("desc"));
                 v.setLecturer(rs.getString("lecturer"));
                 v.setPath(rs.getString("path"));
-                v.setSubject_id(rs.getInt("subject_id"));
-                if(videos == null){
-                    videos = new ArrayList<>();
+                v.setSubject_id(rs.getInt("subject_id"));                              
+                if(video == null){
+                    video = new ArrayList();
                 }
-                videos.add(v);
+                video.add(v);
             }
             
         } catch (SQLException e) {
             System.out.println(e);
         }
-        return videos;
+        return video;
     }
     public static void main(String[] args) {
        List<videos> v = findByTitle("MTH111");
-      for(videos ve : v){
-           System.out.println(ve.toString());
+       if(v!=null){
+        for(videos ve : v){
+             System.out.println(ve.toString());
+         }
+       }else{
+           System.out.println("Not found !!");
        }
          
     }

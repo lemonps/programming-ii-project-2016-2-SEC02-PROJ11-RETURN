@@ -1,37 +1,35 @@
 package model;
 
 import java.io.*;
+
 import java.nio.file.Paths;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.http.*;
+
 
 @MultipartConfig
 public class UploadFile extends HttpServlet {
 
-     protected void UploadVideo(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Part filePart = request.getPart("File"); 
 
-        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); 
-        InputStream fileContent = filePart.getInputStream(); 
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+        InputStream fileContent = filePart.getInputStream();
         OutputStream ops = null;
         try {
-            ops = new FileOutputStream(new File("D:\\Pro_return\\ReturnPage" + fileName));
-            System.out.println("upload success");
-            byte[] b = new byte[1024]; 
-            int read = fileContent.read(b); 
-            while (read != -1) {
+            ops = new FileOutputStream(new File("D:\\Pro_return\\ReturnPage\\web\\VideoStore\\" + fileName));
+            int read = 0;
+            byte[] b = new byte[1024];
+            while ((read = fileContent.read(b)) != -1) {
                 ops.write(b, 0, read);
             }
         } catch (FileNotFoundException e) {
             System.out.println(e);
-        } finally { 
+        } finally {
             if (ops != null) {
                 try {
                     ops.close();
@@ -43,7 +41,7 @@ public class UploadFile extends HttpServlet {
         getServletContext().getRequestDispatcher("/test.jsp").forward(request, response);
     }
 
-      // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -55,7 +53,7 @@ public class UploadFile extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UploadVideo(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -69,7 +67,7 @@ public class UploadFile extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UploadVideo(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -82,4 +80,4 @@ public class UploadFile extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-  }
+}

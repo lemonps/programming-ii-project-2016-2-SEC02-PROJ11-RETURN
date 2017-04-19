@@ -11,7 +11,8 @@
 	<div id="all">
 		
 		<div id="header">
-			
+			<p>userId = ${userId}</p>
+                        <p>Welcome ${name}</p>
 			<form id="searchdata" action="SeachVideo" method="POST">
 				Search : <input type="text" name="title">
                                      <input type="submit" name="GO" value="GO">

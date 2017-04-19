@@ -35,11 +35,20 @@
 				<th><a href="oneforall.html" target="_blank">oneforall</a></th>
 			</tr>
 		</table>
-	</div>
+        </div>
 		<br>
 		<br>
 		<h2>MTH101 LATEST VIDEO</h2>
-		<hr>
+               
+                <form action="SubscriptionSubject">
+                    <input type="hidden" name="userId" value=${userId}>
+                    <input type="hidden" name="subId" value="1">
+                    <input type="submit" value="subscribe">
+                </form>
+		
+                <hr>
+                
+                
  <div id="contentMaster">
 	<div id="content">
 	<a href="viewvideo1.html" "><img src="stary.png" style="width: 50%; height: 50%;"></a> 
@@ -230,7 +239,9 @@
 	</div>
 	
 	</div>
-	
+
+                    <hr>
+                
 	<div id="footer">
 		<center><p>2016 &copy KADEMY 2016</p></center>
 	</div>

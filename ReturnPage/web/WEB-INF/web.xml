@@ -22,7 +22,15 @@
     </servlet>
     <servlet>
         <servlet-name>CreateSub</servlet-name>
-        <servlet-class>non.CreateSub</servlet-class>
+        <servlet-class>model.CreateSub</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SubscriptionSubject</servlet-name>
+        <servlet-class>model.SubscriptionSubject</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConnectLogin</servlet-name>
+        <servlet-class>model.ConnectLogin</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Search</servlet-name>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>CreateSub</servlet-name>
         <url-pattern>/CreateSub</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubscriptionSubject</servlet-name>
+        <url-pattern>/SubscriptionSubject</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConnectLogin</servlet-name>
+        <url-pattern>/ConnectLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

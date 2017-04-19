@@ -1,0 +1,13 @@
+body{
+	background-color: #111122;
+}
+
+hr{
+    border : 2px solid #FFFACD;
+}
+
+h1,h2,span{
+        color:#FFFFE0;
+        text-shadow : 1px 2px black;
+}
+
