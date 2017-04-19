@@ -36,9 +36,12 @@ public class ConnectLogin extends HttpServlet {
             HttpSession session = request.getSession();
             String username = request.getParameter("username");
             session.setAttribute("username", username);
+            
             System.out.println("username = "+username);
+            
             String password = request.getParameter("password");
             session.setAttribute("password", password);
+            
             System.out.println("password = "+password);
         
             Connection conn = ConnectionBuilder.getConnection();

@@ -8,7 +8,7 @@ public class admin {
     private String password;
     private int id;
 
-    public static void insertSubject(subject[] s) throws SQLException {
+    public static void createSubject(subject[] s) throws SQLException {
         Connection con = ConnectionBuilder.getConnection();
         int insertRound = 0;
         PreparedStatement ps = con.prepareStatement("insert into subject values(?,?,?)");
@@ -64,7 +64,7 @@ try{
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         /*subject mySub[] = {new subject(3, "Mth101", "Calculus"),
             new subject(4, "Int105", "ComPro")};
-        admin.insertSubject(mySub);*/
+        admin.createSubject(mySub);*/
         admin.EditSubjectById(2, "a", "b");
     }
 }

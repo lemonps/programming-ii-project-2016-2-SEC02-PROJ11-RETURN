@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.videos;
 import java.util.*;
+
 public class SeachVideo extends HttpServlet {
 
     /**
@@ -24,20 +25,30 @@ public class SeachVideo extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String title = request.getParameter("title");
         try {
-             List<videos> v = videos.findByTitle(title);
-             System.out.println(v.size());
-            if (v == null) {
-                v = new ArrayList<>();
-                request.setAttribute("msg", "Not found Video " + title);
-               
+            List<videos> v = videos.findByTitle(title);
+            if (v != null) {
+                if (title.equalsIgnoreCase("calculus")) {
+                    request.setAttribute("videos", v);
+                    getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
+                } else if (title.equalsIgnoreCase("webtech")) {
+                    request.setAttribute("videos", v);
+                    getServletContext().getRequestDispatcher("/webtech.jsp").forward(request, response);
+                } else if (title.equalsIgnoreCase("computerprogramming")) {
+                    request.setAttribute("videos", v);
+                    getServletContext().getRequestDispatcher("/compro.jsp").forward(request, response);
+                } else if (title.equalsIgnoreCase("platform")) {
+                    request.setAttribute("videos", v);
+                    getServletContext().getRequestDispatcher("/platform.jsp").forward(request, response);
+
+                }
             } else {
-                request.setAttribute("videos", v);
+                request.setAttribute("msg", "Not found Video ");
+                getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
             }
-            
         } catch (NullPointerException e) {
             System.out.println(e);
         }
-         getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

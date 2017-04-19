@@ -41,7 +41,7 @@ public class Delete extends HttpServlet {
         if(inputToDelete!=null){
             for(int i = 0;i<inputToDelete.length;i++){
                 try {
-                    PreparedStatement statement = con.prepareStatement("delete from test where id = ?");
+                    PreparedStatement statement = con.prepareStatement("delete from subject where id = ?");
                     statement.setInt(1,Integer.parseInt(inputToDelete[i])); 
                     statement.executeUpdate();
                 } catch (SQLException ex) {

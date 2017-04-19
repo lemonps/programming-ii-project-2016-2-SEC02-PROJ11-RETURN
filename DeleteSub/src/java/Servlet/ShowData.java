@@ -9,7 +9,7 @@ public class ShowData {
     public static ResultSet showData() {//ResultSet เพราะว่าเราต้องการเอาค่านี้ออกไปprint
         Connection con = ConnectionBuilder.getConnection();
         try {
-            PreparedStatement statement = con.prepareStatement("select * from test");//statement คำสั่งSQL
+            PreparedStatement statement = con.prepareStatement("select * from subject");//statement คำสั่งSQL
             ResultSet rs = statement.executeQuery();//Resultsetคือค่าที่เราใช้เก็บ
             return rs;
             
@@ -18,5 +18,6 @@ public class ShowData {
         }
         return null;
     }
+        }
     
-}
+

@@ -9,9 +9,21 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <p>${msg}</p>
-        <c:forEach items="${videos}" var="video" varStatus="vs">
-                    <p>${vs.count}  ${video.toString()}</p>
-         </c:forEach>
+        <div>
+            <a href="subject.jsp" "><img src="stary.png" width="200" height="200"></a> 
+                <c:forEach items="${videos}" var="video" varStatus="vs">
+                <p>${vs.count}  ${video.title}</p>
+                <p>${video.desc}</p>
+                <p>${video.lecturer}</p>
+                <p>${video.date_time}</p>
+                <p>${video.path}</p>
+                <p>${video.subject_id}</p>
+            </c:forEach>
+            <c:forEach items="${subject}" var="subjectt" varStatus="sj">
+                <p>${sj.count}  ${video.title}</p>
+                <p>${subjectt.course_id}</p>
+                <p>${subjectt.name}</p>
+            </c:forEach>
+        </div>
     </body>
 </html>

@@ -11,9 +11,10 @@ public class ConnectionBuilder {
     public static Connection getConnection(){
          // Method for Load and connect database
             Connection con = null;
-         try{
-            Class.forName("org.apache.derby.jdbc.ClientDriver");// 1 Load Driver
-             con = DriverManager.getConnection("jdbc:derby://localhost:1527/Test","test","test"); // 2 Connect 
+        
+            try{
+            Class.forName("com.mysql.jdbc.Driver");// 1 Load Driver
+             con = DriverManager.getConnection("jdbc:mysql://188.166.252.187:3306/return_dev?zeroDateTimeBehavior=convertToNull","return_devman","dev128"); // 2 Connect 
             }catch(ClassNotFoundException e){
                 System.out.println(e);
             }catch(SQLException e){
