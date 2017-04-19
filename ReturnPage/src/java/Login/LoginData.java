@@ -7,21 +7,22 @@ package Login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 import model.ConnectionBuilder;
 
 /**
  *
- * @author WIN10_M7
+ * @author homun
  */
+@WebServlet(name = "LoginData", urlPatterns = {"/LoginData"})
 public class LoginData extends HttpServlet {
 
     /**

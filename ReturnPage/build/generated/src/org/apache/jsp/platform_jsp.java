@@ -51,6 +51,7 @@ public final class platform_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+<<<<<<< HEAD
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -75,6 +76,32 @@ public final class platform_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
+=======
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>JSP Page</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <div>\n");
+      out.write("            <a href=\"DisplayPlatform.jsp\" \"><img src=\"stary.png\" width=\"200\" height=\"200\"></a> \n");
+      out.write("                ");
+      if (_jspx_meth_c_forEach_0(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("            ");
+      if (_jspx_meth_c_forEach_1(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("        </div>\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
+>>>>>>> eabfb61f0acf717b741b7a21835340dee7308956
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -104,6 +131,7 @@ public final class platform_jsp extends org.apache.jasper.runtime.HttpJspBase
       int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
+<<<<<<< HEAD
           out.write("\r\n");
           out.write("                <p>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${vs.count}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -126,6 +154,27 @@ public final class platform_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                <p>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.subject_id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</p>\r\n");
+=======
+          out.write("\n");
+          out.write("                <p>Video Title : ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</p>\n");
+          out.write("                <p>Video Description : ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.desc}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</p>\n");
+          out.write("                <p>Video Lecturer : ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.lecturer}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</p>\n");
+          out.write("                <p> Video Time : ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.date_time}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</p>\n");
+          out.write("                <p> Video Path : ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.path}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</p>\n");
+          out.write("                <p>Video Subject ID : ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${video.subject_id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</p>\n");
+>>>>>>> eabfb61f0acf717b741b7a21835340dee7308956
           out.write("            ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -162,6 +211,7 @@ public final class platform_jsp extends org.apache.jasper.runtime.HttpJspBase
       int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
       if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
+<<<<<<< HEAD
           out.write("\r\n");
           out.write("                <p>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sj.count}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -175,6 +225,15 @@ public final class platform_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                <p>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${subjectt.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</p>\r\n");
+=======
+          out.write("\n");
+          out.write("                <p>Subject Course ID : ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${subjectt.course_id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</p>\n");
+          out.write("                <p>Subject Name : ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${subjectt.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</p>\n");
+>>>>>>> eabfb61f0acf717b741b7a21835340dee7308956
           out.write("            ");
           int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
