@@ -12,17 +12,16 @@
         <div>
             <a href="DisplayWebtech.jsp" "><img src="stary.png" width="200" height="200"></a> 
                 <c:forEach items="${videos}" var="video" varStatus="vs">
-                <p>${vs.count}  ${video.title}</p>
-                <p>${video.desc}</p>
-                <p>${video.lecturer}</p>
-                <p>${video.date_time}</p>
-                <p>${video.path}</p>
-                <p>${video.subject_id}</p>
+                <p>Video Title : ${video.title}</p>
+                <p>Video Description : ${video.desc}</p>
+                <p>Video Lecturer : ${video.lecturer}</p>
+                <p> Video Time : ${video.date_time}</p>
+                <p> Video Path : ${video.path}</p>
+                <p>Video Subject ID : ${video.subject_id}</p>
             </c:forEach>
             <c:forEach items="${subject}" var="subjectt" varStatus="sj">
-                <p>${sj.count}  ${video.title}</p>
-                <p>${subjectt.course_id}</p>
-                <p>${subjectt.name}</p>
+                <p>Subject Course ID : ${subjectt.course_id}</p>
+                <p>Subject Name : ${subjectt.name}</p>
             </c:forEach>
         </div>
     </body>

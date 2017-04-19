@@ -8,11 +8,11 @@ package Register;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.*;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,8 +20,9 @@ import model.ConnectionBuilder;
 
 /**
  *
- * @author WIN10_M7
+ * @author homun
  */
+@WebServlet(name = "RegisterData", urlPatterns = {"/RegisterData"})
 public class RegisterData extends HttpServlet {
 
     /**
@@ -35,7 +36,7 @@ public class RegisterData extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+response.setContentType("text/html;charset=UTF-8");
         //request ก็คือ การที่เรากดคลิกส่งข้อมูลอะไรก็ตามเนี่ย ข้อมูลจะถูกส่งไปยัง server แล้ว server ก็จะประมวลผลตอบกลับมา
         String username = request.getParameter("username");//เป็นปุ่มคลิก ที่ปุ่มส่งข้อมูลมาเป็นString
         String password = request.getParameter("password");
@@ -88,7 +89,6 @@ public class RegisterData extends HttpServlet {
         } catch (SQLException ex) {
             System.out.println("คำสั่งผิด");
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

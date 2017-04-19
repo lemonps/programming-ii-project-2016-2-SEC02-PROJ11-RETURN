@@ -15,12 +15,12 @@
     <body>
         <form action="RegisterData">
             <p>Username : <input type="text" name = "username"></p>
-            <p>Password : <input type="password"name = "password"></p>
-            <p>Name : <input type="text"name = "name"></p>
-            <p>Surname : <input type="text"name = "surname"></p>
+            <p>Password : <input type="password" name = "password"></p>
+            <p>Name : <input type="text" name = "name"></p>
+            <p>Surname : <input type="text" name = "surname"></p>
 
-        
-        <input type="submit" onlick="window.alert('วู้ววววว')">
+
+            <input type="submit" onlick="window.alert('วู้ววววว')">
         </form>    
     </body>
 </html>
