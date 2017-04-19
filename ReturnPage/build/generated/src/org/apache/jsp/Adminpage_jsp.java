@@ -69,10 +69,10 @@ public final class Adminpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\n");
       out.write("        <div>\n");
       out.write("                   <h2>Create Subject</h2>\n");
-      out.write("            <form method=\"post\" action=\"CreateSub\"> \n");
-      out.write("                <input type=\"text\" name=\"id\">               \n");
-      out.write("                <input type=\"text\" name=\"name\" >                \n");
-      out.write("                <input type=\"text\" name=\"course_id\" >\n");
+      out.write("            <form method=\"post\" action=\"CreateSub\">       \n");
+      out.write("                <input type=\"text\" name=\"id\" placeholder=\"input id\">               \n");
+      out.write("                <input type=\"text\" name=\"name\" placeholder=\"input name\">                \n");
+      out.write("                <input type=\"text\" name=\"course_id\" placeholder=\"input course_id\" >\n");
       out.write("                <input type=\"submit\" name=\"submit\">                    \n");
       out.write("            </form>                      \n");
       out.write("        </div>\n");

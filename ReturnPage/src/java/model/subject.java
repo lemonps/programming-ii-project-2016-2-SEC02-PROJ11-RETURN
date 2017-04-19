@@ -39,6 +39,9 @@ public class subject {
         } catch (SQLException e) {
             System.out.println(e);
         }
+        String sub2 = "Subject Name = " + sub.getName();
+        sub2 += "\nSubject Course_id = " + sub.getCourse_id();
+        System.out.println(sub2);
         return sub;
     }
 
@@ -61,7 +64,33 @@ public class subject {
                 }
                 subject.add(sub);
             }
-
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (NullPointerException e) {
+            System.out.println(e);
+        }
+        return subject;
+    }
+    
+        public static List<subject> findByCourseId(String sname) {
+        List<subject> subject = null;
+        try {
+            Connection con = ConnectionBuilder.getConnection();
+            String sql = "select * from subject where course_id like ?";
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setString(1, "%" + sname + "%");
+            // Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                subject sub = new subject();
+                sub.setId(rs.getInt("id"));
+                sub.setName(rs.getString("name"));
+                sub.setCourse_id(rs.getString("course_id"));
+                if (subject == null) {
+                    subject = new ArrayList<>();
+                }
+                subject.add(sub);
+            }
         } catch (SQLException e) {
             System.out.println(e);
         } catch (NullPointerException e) {
@@ -95,11 +124,16 @@ public class subject {
     }
 
     public static void main(String[] args) {
-       List<subject> sub = findBySubName("calculus");
-      for(subject s : sub){
-           System.out.println(s.getName());
-       }
-       subject sub2 = subject.findBySubId(1);
-        System.out.println(sub2.getName());
+        List<subject> s = findByCourseId("mth111");
+        for (subject ve : s) {
+            System.out.println(ve.toString());
+        }
+
     }
+
+    @Override
+    public String toString() {
+        return "subject{" + "id=" + id + ", name=" + name + ", course_id=" + course_id + '}';
+    }
+    
 }

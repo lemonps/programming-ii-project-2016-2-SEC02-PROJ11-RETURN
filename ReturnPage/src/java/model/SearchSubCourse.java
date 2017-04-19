@@ -1,15 +1,25 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package model;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.videos;
-import java.util.*;
 
-public class SeachVideo extends HttpServlet {
+/**
+ *
+ * @author homun
+ */
+@WebServlet(name = "SearchSubCourse", urlPatterns = {"/SearchSubCourse"})
+public class SearchSubCourse extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -23,21 +33,22 @@ public class SeachVideo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String title = request.getParameter("title");
-        try {
-            List<videos> v = videos.findByTitle(title);
-            if (v != null) {
-                if (title.equalsIgnoreCase("calculus")) {
-                    request.setAttribute("videos", v);
+        try{
+            
+                    String course_id = request.getParameter("course_id");
+                        List<subject> s = subject.findByCourseId(course_id);
+            if (s != null) {
+                if (course_id.equalsIgnoreCase("MTH111")) {
+                    request.setAttribute("subject", s);
                     getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
-                } else if (title.equalsIgnoreCase("webtech")) {
-                    request.setAttribute("videos", v);
+                } else if (course_id.equalsIgnoreCase("INT106")) {
+                    request.setAttribute("subject", s);
                     getServletContext().getRequestDispatcher("/webtech.jsp").forward(request, response);
-                } else if (title.equalsIgnoreCase("computerprogramming")) {
-                    request.setAttribute("videos", v);
+                } else if (course_id.equalsIgnoreCase("INT105")) {
+                    request.setAttribute("subject", s);
                     getServletContext().getRequestDispatcher("/compro.jsp").forward(request, response);
-                } else if (title.equalsIgnoreCase("platform")) {
-                    request.setAttribute("videos", v);
+                } else if (course_id.equalsIgnoreCase("INT107")) {
+                    request.setAttribute("subject", s);
                     getServletContext().getRequestDispatcher("/platform.jsp").forward(request, response);
 
                 }
@@ -45,10 +56,11 @@ public class SeachVideo extends HttpServlet {
                 request.setAttribute("msg", "Not found Video ");
                 getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
             }
+            
+            
         } catch (NullPointerException e) {
             System.out.println(e);
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

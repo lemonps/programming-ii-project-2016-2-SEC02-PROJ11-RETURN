@@ -30,10 +30,10 @@
         </div>
         <div>
                    <h2>Create Subject</h2>
-            <form method="post" action="CreateSub"> 
-                <input type="text" name="id">               
-                <input type="text" name="name" >                
-                <input type="text" name="course_id" >
+            <form method="post" action="CreateSub">       
+                <input type="text" name="id" placeholder="input id">               
+                <input type="text" name="name" placeholder="input name">                
+                <input type="text" name="course_id" placeholder="input course_id" >
                 <input type="submit" name="submit">                    
             </form>                      
         </div>

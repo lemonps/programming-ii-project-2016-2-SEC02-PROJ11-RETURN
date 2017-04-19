@@ -10,7 +10,7 @@
     </head>
     <body>
         <div>
-            <a href="subject.jsp" "><img src="stary.png" width="200" height="200"></a> 
+            <a href="DisplayCompro.jsp" "><img src="stary.png" width="200" height="200"></a> 
                 <c:forEach items="${videos}" var="video" varStatus="vs">
                 <p>${vs.count}  ${video.title}</p>
                 <p>${video.desc}</p>
