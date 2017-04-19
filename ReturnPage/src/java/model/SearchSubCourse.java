@@ -33,12 +33,12 @@ public class SearchSubCourse extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try{
-            
-                    String course_id = request.getParameter("course_id");
-                        List<subject> s = subject.findByCourseId(course_id);
+        try {
+
+            String course_id = request.getParameter("course_id");
+            List<subject> s = subject.findByCourseId(course_id);
             if (s != null) {
-                if (course_id.equalsIgnoreCase("MTH111")) {
+                if (course_id.equalsIgnoreCase("MTH101")) {
                     request.setAttribute("subject", s);
                     getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
                 } else if (course_id.equalsIgnoreCase("INT106")) {
@@ -56,8 +56,7 @@ public class SearchSubCourse extends HttpServlet {
                 request.setAttribute("msg", "Not found Video ");
                 getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
             }
-            
-            
+
         } catch (NullPointerException e) {
             System.out.println(e);
         }
