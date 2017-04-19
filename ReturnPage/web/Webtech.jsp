@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PAGE1</title>
+	<title>Webtech</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="1.css">
 
@@ -38,12 +38,12 @@
         </div>
 		<br>
 		<br>
-		<h2>MTH101 LATEST VIDEO</h2>
+		<h2>Webtech</h2>
                
                 <form action="SubscriptionSubject">
                     <input type="hidden" name="userId" value=${userId}>
                     <input type="hidden" name="subId" value="1">
-                    <input type="submit" value="subscribe">
+                    <input type="submit" value="subscribe" onclick="location.reload(true)">
                 </form>
 		
                 <hr>

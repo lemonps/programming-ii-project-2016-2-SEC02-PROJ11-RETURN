@@ -11,10 +11,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="stylesheet" type="text/css" href="3.css">
         <title>JSP Page</title>
     </head>
     <body>
         <form action="Delete">
+            <h2>Delete Subject</h2>
+                <hr>
             <table border = "1">
                 <tr><th>ID</th><th>Name</th><th>Course_id</th><th>Delete</th></tr>
 

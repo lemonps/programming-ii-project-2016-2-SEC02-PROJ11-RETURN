@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PAGE1</title>
+	<title>Calculas</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="1.css">
 
@@ -38,12 +38,12 @@
         </div>
 		<br>
 		<br>
-		<h2>MTH101 LATEST VIDEO</h2>
+		<h2>Calculas</h2>
                
                 <form action="SubscriptionSubject">
                     <input type="hidden" name="userId" value=${userId}>
                     <input type="hidden" name="subId" value="1">
-                    <input type="submit" value="subscribe">
+                    <input type="submit" value="subscribe" onclick="location.reload(true)">
                 </form>
 		
                 <hr>
@@ -51,7 +51,7 @@
                 
  <div id="contentMaster">
 	<div id="content">
-	<a href="viewvideo1.html" "><img src="stary.png" style="width: 50%; height: 50%;"></a> 
+	<a href="viewvideo1.html"><img src="stary.png" style="width: 50%; height: 50%;"></a> 
 	<br>            <h3>MTH101 CALCULUS I</h3>
 			<p>AJ. KASEM KEETAK</p>
 			<p>SEC.1 8.30-11.30</p>

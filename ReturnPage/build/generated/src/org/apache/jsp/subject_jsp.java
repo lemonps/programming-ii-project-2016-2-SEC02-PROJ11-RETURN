@@ -78,10 +78,13 @@ public final class subject_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<br>\n");
       out.write("\t\t<br>\n");
       out.write("\t\t<h2>MTH101 LATEST VIDEO</h2>\n");
+      out.write("               \n");
       out.write("                <form action=\"SubscriptionSubject\">\n");
-      out.write("                    <input type=\"hidden\" name=\"userId\" value=\"1\">\n");
-      out.write("                    <input type=\"hidden\" name=\"subId\" value=\"5\">\n");
-      out.write("                    <input type=\"submit\" value=\"subscript\">\n");
+      out.write("                    <input type=\"hidden\" name=\"userId\" value=");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${userId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(">\n");
+      out.write("                    <input type=\"hidden\" name=\"subId\" value=\"1\">\n");
+      out.write("                    <input type=\"submit\" value=\"subscribe\" onclick=\"location.reload(true)\">\n");
       out.write("                </form>\n");
       out.write("\t\t\n");
       out.write("                <hr>\n");

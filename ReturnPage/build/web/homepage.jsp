@@ -12,8 +12,8 @@
         <div id="all">
 
             <div id="header">
-                        <p>userId = ${userId}</p>
-                        <p>Welcome ${name}</p>
+                        <span>ID = ${userId}</span><br>
+                        <span>Welcome ${name}</span>
                         
                 <form id="searchdata" action="SeachVideo" method="POST">
                     SearchBytitle : <input type="text" name="title">
@@ -22,7 +22,7 @@
                
                 <form id="searchdata" action="SearchSubCourse" method="POST">
                     SearchBycourseId : <input type="text" name="course_id">
-                    <input type="submit" name="GO" value="eiei">
+                    <input type="submit" name="GO" value="GO">
                 </form>
 
                 <img src="logo.png" alt="logo">
@@ -54,10 +54,10 @@
 
                 <div id="incontent">
                     <ul>
-                        <div id="list1"><li><a href="subject.jsp">CALCULAS</a></li></div><br>
-                        <div id="list2"><li><a href="subject.jsp">COMPROGRAMMING</a></li></div><br>
-                        <div id="list3"><li><a href="subject.jsp">PLATFORM</a></li></div><br>
-                        <div id="list4"><li><a href="subject.jsp">WEBTECH</a></li></div><br>
+                        <div id="list1"><li><a href="Calculas.jsp">CALCULAS</a></li></div><br>
+                        <div id="list2"><li><a href="Compro.jsp">COMPROGRAMMING</a></li></div><br>
+                        <div id="list3"><li><a href="Platform.jsp">PLATFORM</a></li></div><br>
+                        <div id="list4"><li><a href="Webtech.jsp">WEBTECH</a></li></div><br>
                         <ul>
                 </div>
 

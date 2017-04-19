@@ -20,9 +20,9 @@
                    <hr>
                    
             <form method="post" action="CreateSub"> 
-                <input type="text" name="id">               
-                <input type="text" name="name" >                
-                <input type="text" name="course_id" >
+                <p>id : <input type="text" name="id"></p>               
+                <p>Subject name: <input type="text" name="name" ></p>                
+                <p>Course_id : <input type="text" name="course_id" ></p>
                 <input type="submit" name="submit">                    
             </form>                      
         </div>

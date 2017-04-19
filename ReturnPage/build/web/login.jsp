@@ -1,6 +1,6 @@
 <%-- 
-    Document   : login
-    Created on : Apr 18, 2017, 10:39:17 PM
+    Document   : login1
+    Created on : Apr 19, 2017, 10:29:03 AM
     Author     : Lemon
 --%>
 
@@ -9,13 +9,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+         <link rel="stylesheet" type="text/css" href="3.css">
+
+        <title>LOGIN Page</title>
     </head>
     <body>
-        <form action="ConnectLogin">
-            <input type="text" name="username">
-            <input type="password" name="password">
-            <input type="submit" value="login">
-        </form>
+       
+        
+   
+        
+        <div id="">
+            <h1>LOGIN Return<h1>
+                    <hr>
+            <form action="ConnectLogin">
+                 <p>Username : <input type="text" name = "username"></p>
+                 <p>Password : <input type="password"name = "password"></p>
+
+                 <input type="submit" onclick=""  value="Sign in" disable>
+            </form>   
+        </div>
+            
     </body>
 </html>

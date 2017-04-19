@@ -14,6 +14,7 @@ public class SubscriptionSubject extends HttpServlet {
     subscription sub;
     int userId;
     int subId;
+   
     public SubscriptionSubject() {
         
     }
@@ -21,7 +22,7 @@ public class SubscriptionSubject extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        /////////
+        
         HttpSession session = request.getSession();
         String userId = request.getParameter("userId");
         session.setAttribute("userId", userId);

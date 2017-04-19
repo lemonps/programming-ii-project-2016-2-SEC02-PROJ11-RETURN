@@ -8,6 +8,7 @@ package model;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,37 +32,48 @@ public class ConnectLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try{
+        try {
             response.setContentType("text/html;charset=UTF-8");
             HttpSession session = request.getSession();
             String username = request.getParameter("username");
             session.setAttribute("username", username);
-            
-            System.out.println("username = "+username);
-            
+
+            //System.out.println("username = "+username);
             String password = request.getParameter("password");
             session.setAttribute("password", password);
-            
-            System.out.println("password = "+password);
-        
+
+            //System.out.println("password = "+password);
+
             Connection conn = ConnectionBuilder.getConnection();
             Statement stm = conn.createStatement();
-            ResultSet rs = stm.executeQuery("select user.id,user.name from user where username='"+username+"' AND password='"+password+"'");
-            int userId=0;
-            String name=null;
-            while(rs.next()){
-                userId=rs.getInt("id");
-                name=rs.getString("name");
+           
+            if (LoginFormDB.validate(username, password)) {
+                RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
+                rd.forward(request, response);
+            } else {
+                session.setAttribute("msg", "Cannot login to RETURN !!");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.include(request, response);
             }
-            session.setAttribute("userId",userId);
-            session.setAttribute("name",name);
-            System.out.println("userId = "+session.getAttribute("userId"));
-            getServletContext().getRequestDispatcher("/homepage.jsp").forward(request, response);
-        
-        }catch(SQLException e){
+
+            
+
+            ResultSet rs = stm.executeQuery("select user.id,user.name from user where username='" + username + "' AND password='" + password + "'");
+            int userId = 0;
+            String name = null;
+            while (rs.next()) {
+                userId = rs.getInt("id");
+                name = rs.getString("name");
+
+            }
+            session.setAttribute("userId", userId);
+            session.setAttribute("name", name);
+            System.out.println("userId = " + session.getAttribute("userId"));
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-        
+            System.out.close();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
