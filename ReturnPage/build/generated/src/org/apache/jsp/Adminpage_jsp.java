@@ -60,6 +60,17 @@ public final class Adminpage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div>   \n");
       out.write("           <h2>Edit Subject</h2>\n");
       out.write("            <form method=\"post\" action=\"EditSubject\"> \n");
+      out.write("                ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${subject.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" <br>              \n");
+      out.write("                Edit name to :<input type=\"text\" name=\"name\" >     <br>           \n");
+      out.write("                Edit course_id to :<input type=\"text\" name=\"course_id\" >   <br>\n");
+      out.write("                <input type=\"submit\" name=\"submit\" value=\"ok\">                    \n");
+      out.write("           \n");
+      out.write("            </form>                      \n");
+      out.write("        </div>\n");
+      out.write("        \n");
+      out.write("        \n");
       out.write("                           \n");
       out.write("                <input type=\"text\" name=\"name\" >                \n");
       out.write("                <input type=\"text\" name=\"course_id\" >\n");
