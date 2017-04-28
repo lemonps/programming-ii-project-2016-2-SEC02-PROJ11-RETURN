@@ -3,8 +3,10 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import model.user;
+import model.LoginFormDB;
 
-public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -41,24 +43,35 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>Login</title>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("        <form action=\"LoginData\">\r\n");
-      out.write("            <p>Username : <input type=\"text\" name = \"username\"></p>\r\n");
-      out.write("            <p>Password : <input type=\"password\"name = \"password\"></p>\r\n");
-      out.write("\r\n");
-      out.write("        <input type=\"submit\" onclick=\"window.alert('dddd')\" >\r\n");
-      out.write("        </form>   \r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"3.css\">\n");
+      out.write("\n");
+      out.write("        <title>LOGIN Page</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("    \n");
+      out.write("        <div id=\"\">\n");
+      out.write("            <h1>LOGIN Return<h1>\n");
+      out.write("                    <hr>\n");
+      out.write("                    <form action=\"ConnectLogin\">\n");
+      out.write("\n");
+      out.write("                        <p>Username : <input type=\"text\" name = \"username\"></p>\n");
+      out.write("                        <p>Password : <input type=\"password\" name = \"password\"></p>\n");
+      out.write("                        <input type=\"submit\" value=\"Sign in\" >\n");
+      out.write("                        \n");
+      out.write("                    </form>   \n");
+      out.write("                    </div>\n");
+      out.write("  </body>\n");
+      out.write(" </html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

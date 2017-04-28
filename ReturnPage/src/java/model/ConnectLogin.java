@@ -34,6 +34,7 @@ public class ConnectLogin extends HttpServlet {
             throws ServletException, IOException {
         try {
             response.setContentType("text/html;charset=UTF-8");
+
             HttpSession session = request.getSession();
             String username = request.getParameter("username");
             session.setAttribute("username", username);
@@ -43,37 +44,36 @@ public class ConnectLogin extends HttpServlet {
             session.setAttribute("password", password);
 
             //System.out.println("password = "+password);
-
             Connection conn = ConnectionBuilder.getConnection();
             Statement stm = conn.createStatement();
-           
-            if (LoginFormDB.validate(username, password)) {
-                RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
-                rd.forward(request, response);
-            } else {
-                session.setAttribute("msg", "Cannot login to RETURN !!");
-                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
-                rd.include(request, response);
-            }
-
-            
 
             ResultSet rs = stm.executeQuery("select user.id,user.name from user where username='" + username + "' AND password='" + password + "'");
             int userId = 0;
             String name = null;
+
             while (rs.next()) {
                 userId = rs.getInt("id");
                 name = rs.getString("name");
-
             }
+
             session.setAttribute("userId", userId);
             session.setAttribute("name", name);
-            System.out.println("userId = " + session.getAttribute("userId"));
+
+            if (LoginFormDB.checkLogin(username, password)) {
+                RequestDispatcher rd = request.getRequestDispatcher("/homepage.jsp");
+                rd.forward(request, response);
+
+            } else {
+                session.setAttribute("msg", "Username or Password incorrect !!");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.include(request, response);
+            }
+            //System.out.println("userId From Login = " + session.getAttribute("userId"));
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-            System.out.close();
+//            System.out.close();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

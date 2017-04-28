@@ -14,7 +14,7 @@ public class UploadFile extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("video/mp4");
         Part filePart = request.getPart("File"); 
 
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();

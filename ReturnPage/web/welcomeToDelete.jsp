@@ -23,7 +23,10 @@
 
                 <%ResultSet rs = ShowData.showData();%>
                 <%while (rs.next()) {%>
-                <tr><td><%out.print(rs.getInt("id"));%></td><td><%out.print(rs.getString("name"));%></td><td><%out.print(rs.getString("course_id"));%></td>
+                <tr>
+                    <td><%out.print(rs.getInt("id"));%></td>
+                    <td><%out.print(rs.getString("name"));%></td>
+                    <td><%out.print(rs.getString("course_id"));%></td>
                     <td><input type="checkbox" name = "DeleteBox" value="<%out.print(rs.getInt("id"));%>"></td> 
                 </tr>
                 <%}%> 

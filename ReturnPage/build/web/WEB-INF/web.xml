@@ -26,11 +26,27 @@
     </servlet>
     <servlet>
         <servlet-name>SubscriptionSubject</servlet-name>
-        <servlet-class>model.SubscriptionSubject</servlet-class>
+        <servlet-class>model.Subscribe</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ConnectLogin</servlet-name>
         <servlet-class>model.ConnectLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Esubject</servlet-name>
+        <servlet-class>model.Esubject</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TesTConnectLogin</servlet-name>
+        <servlet-class>model.TesTConnectLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowVideo</servlet-name>
+        <servlet-class>model.ShowVideo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Subscribe</servlet-name>
+        <servlet-class>model.Subscribe</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Search</servlet-name>
@@ -63,6 +79,18 @@
     <servlet-mapping>
         <servlet-name>ConnectLogin</servlet-name>
         <url-pattern>/ConnectLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Esubject</servlet-name>
+        <url-pattern>/Esubject</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowVideo</servlet-name>
+        <url-pattern>/ShowVideo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Subscribe</servlet-name>
+        <url-pattern>/Subscribe</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

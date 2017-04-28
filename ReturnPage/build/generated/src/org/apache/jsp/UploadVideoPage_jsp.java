@@ -59,7 +59,8 @@ public final class UploadVideoPage_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        <div>\n");
       out.write("            <form method=\"post\"  action=\"UploadFile\" enctype=\"multipart/form-data\">\n");
       out.write("                    <input type=\"file\" name=\"File\" >\n");
-      out.write("                    <input type=\"submit\" value=\"Upload\">  \n");
+      out.write("                    <input type=\"submit\" value=\"Upload\">\n");
+      out.write("                    <p > ****โปรด Upload เฉพาะไฟล์ .mp4****</p>\n");
       out.write("            </form>\n");
       out.write("        </div>\n");
       out.write("    </body>\n");

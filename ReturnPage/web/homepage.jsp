@@ -12,8 +12,7 @@
         <div id="all">
 
             <div id="header">
-                        <span>ID = ${userId}</span><br>
-                        <span>Welcome ${name}</span>
+                        <span>Welcome  Mr. ${name}</span>
                         
                 <form id="searchdata" action="SeachVideo" method="POST">
                     SearchBytitle : <input type="text" name="title">
@@ -54,7 +53,7 @@
 
                 <div id="incontent">
                     <ul>
-                        <div id="list1"><li><a href="Calculas.jsp">CALCULAS</a></li></div><br>
+                        <div id="list1"><li><a href="Calculas.jsp?userId=${userId}">CALCULAS</a></li></div><br>
                         <div id="list2"><li><a href="Compro.jsp">COMPROGRAMMING</a></li></div><br>
                         <div id="list3"><li><a href="Platform.jsp">PLATFORM</a></li></div><br>
                         <div id="list4"><li><a href="Webtech.jsp">WEBTECH</a></li></div><br>

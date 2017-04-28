@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import model.ShowData;
+import java.sql.ResultSet;
 
 public final class EditSubjectPage_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -44,6 +46,8 @@ public final class EditSubjectPage_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -52,19 +56,60 @@ public final class EditSubjectPage_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        <title>Edit Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
+      out.write("\n");
       out.write("        <div>   \n");
-      out.write("           <h2>Edit Subject</h2>\n");
-      out.write("           \n");
-      out.write("           <hr><br>\n");
-      out.write("           \n");
-      out.write("            <form method=\"post\" action=\"EditSubject\"> \n");
-      out.write("               <span> id :</span> <input type=\"number\" name=\"id\" >  <br>                 \n");
-      out.write("               <span> Edit name to :</span> <input type=\"text\" name=\"name\" >     <br>           \n");
-      out.write("               <span> Edit course_id to :</span> <input type=\"text\" name=\"course_id\" >   <br>\n");
-      out.write("                <input type=\"submit\" name=\"submit\" value=\"ok\">                    \n");
-      out.write("           \n");
+      out.write("            <h1>Edit Subject</h1>\n");
+      out.write("\n");
+      out.write("            <hr><br>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("            <table border = \"2\">\n");
+      out.write("                <tr>\n");
+      out.write("                    <th>ID</th>\n");
+      out.write("                    <th>Subject name</th>\n");
+      out.write("                    <th>Course_id</th>\n");
+      out.write("                </tr>\n");
+      out.write("\n");
+      out.write("                ");
+ResultSet rs = ShowData.showData();
+      out.write("\n");
+      out.write("                ");
+while (rs.next()) {
+      out.write("\n");
+      out.write("                <tr>\n");
+      out.write("                    <td>");
+out.print(rs.getInt("id"));
+      out.write("</td>\n");
+      out.write("                    <td>");
+out.print(rs.getString("name"));
+      out.write("</td>\n");
+      out.write("                    <td>");
+out.print(rs.getString("course_id"));
+      out.write("</td>\n");
+      out.write("\n");
+      out.write("                </tr>\n");
+      out.write("                ");
+}
+      out.write(" \n");
+      out.write("\n");
+      out.write("            </table>\n");
+      out.write("             \n");
+      out.write("            <br>\n");
+      out.write("            <hr>\n");
+      out.write("\n");
+      out.write("            <h2>Edit . . .</h2>\n");
+      out.write("            <form method=\"post\" action=\"SubjectEdit\">          \n");
+      out.write("                    \n");
+      out.write("                <p>\n");
+      out.write("                    <span> id : </span> <input type=\"text\" name=\"id\">  <br>\n");
+      out.write("                    <span> Edit name to :</span> <input type=\"text\" name=\"name\" >     <br>           \n");
+      out.write("                    <span> Edit course_id to :</span> <input type=\"text\" name=\"course_id\" >   <br><br>\n");
+      out.write("                    <input type=\"submit\" name=\"submit\" value=\"OK\" onclick=\"location.reload(true)\">                    \n");
+      out.write("                </p>\n");
+      out.write("\n");
       out.write("            </form>                      \n");
       out.write("        </div>\n");
+      out.write("\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

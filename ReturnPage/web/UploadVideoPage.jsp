@@ -20,7 +20,8 @@
         <div>
             <form method="post"  action="UploadFile" enctype="multipart/form-data">
                     <input type="file" name="File" >
-                    <input type="submit" value="Upload">  
+                    <input type="submit" value="Upload">
+                    <p > ****โปรด Upload เฉพาะไฟล์ .mp4****</p>
             </form>
         </div>
     </body>

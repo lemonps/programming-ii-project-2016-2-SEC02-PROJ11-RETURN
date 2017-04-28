@@ -9,10 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="3.css">
+
         <title>Error Page</title>
     </head>
     <body>
         
-        <p>${sessionScope.msg}</p>
+        <h2 style="color:red">${sessionScope.msg}</h2>
+        <a href="login.jsp" style="color:yellow"> press to go back login again </a>
     </body>
 </html>

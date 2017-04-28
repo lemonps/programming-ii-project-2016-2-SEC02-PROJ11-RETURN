@@ -13,7 +13,7 @@ import java.sql.*;
  */
 public class LoginFormDB {
 
-    public static boolean validate(String username, String password) {
+    public static boolean checkLogin(String username, String password) {
         boolean status = false;
        
             try {

@@ -30,6 +30,6 @@ public class ConnectionBuilder {
         
     public static void main(String[] args) {
         Connection con = getConnection();
-        System.out.println("eiei");
+        System.out.println("correct");
     }
 }
