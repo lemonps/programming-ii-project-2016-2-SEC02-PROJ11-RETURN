@@ -18,7 +18,7 @@
     </head>
     <body>
         <%
-         
+            /*
                 Connection con = ConnectionBuilder.getConnection();
                 String sql = "select id from subscription where user_id=? AND subject_id=6";
                 PreparedStatement ps = con.prepareStatement(sql);
@@ -35,7 +35,7 @@
                 con.close();
            
             }
-
+            */
 
         %>
 

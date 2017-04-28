@@ -27,7 +27,7 @@
                 request.getSession().setAttribute("userId", userId);
                 request.setAttribute("text", "Subscribe");
                 int uid = Integer.parseInt(userId);
-                ps.setInt(1, uid);
+                ps.setInt(1,uid);
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {

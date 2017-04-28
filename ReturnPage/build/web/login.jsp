@@ -21,11 +21,11 @@
         <div id="">
             <h1>LOGIN Return<h1>
                     <hr>
-                    <form action="ConnectLogin">
+                    <form action="ConnectLogin"  method="POST">
 
                         <p>Username : <input type="text" name = "username"></p>
                         <p>Password : <input type="password" name = "password"></p>
-                        <input type="submit" value="Sign in" >
+                        <input type="submit" value="Sign in">
                         
                     </form>   
                     </div>

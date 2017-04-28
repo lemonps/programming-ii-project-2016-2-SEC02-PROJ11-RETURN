@@ -5,12 +5,8 @@
  */
 package model;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.*;
+import java.sql.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -43,26 +39,35 @@ public class Subscribe extends HttpServlet {
         String subId = request.getParameter("subId");
         session.setAttribute("subId", subId);
         System.out.println("subId = " + subId);
-        
+        request.setAttribute("text", "Subscribe");
+        int uid = Integer.parseInt(userId);
+        int sid = Integer.parseInt(subId);
         
         try {
             Connection con = ConnectionBuilder.getConnection();
             String sql;
+            String sql1;
+                sql1 = "select id from subscription where user_id=? AND subject_id=3";
+                PreparedStatement ps1 = con.prepareStatement(sql1);
+                ps1.setInt(1, uid);
+                ResultSet rs = ps1.executeQuery();
+                while (rs.next()) {
+                request.setAttribute("text", "Unsubscribe");
+            }
+
             if (request.getParameter("subscribeStatus").equals("Subscribe")) {
                 sql = "insert into subscription (user_id , subject_id) values (?,?)";
-                //System.out.println("Subscribe !!");
+                System.out.println("Subscribe !!");
                 
             } else {
                 sql = "delete from subscription WHERE user_id = ? AND subject_id = ?";
-                //System.out.println("UnSubscribe !!");
+                System.out.println("UnSubscribe !!");
             }
             
-            PreparedStatement ps = con.prepareStatement(sql);
-            int uid = Integer.parseInt(userId);
-            int sid = Integer.parseInt(subId);
-            ps.setInt(1, uid);
-            ps.setInt(2, sid);
-            ps.executeUpdate();
+            PreparedStatement ps2 = con.prepareStatement(sql);
+                ps2.setInt(1, uid);
+                ps2.setInt(2, sid);
+                ps2.executeUpdate();
             
             RequestDispatcher rd = request.getRequestDispatcher(request.getParameter("jspPath"));
             rd.forward(request, response);
