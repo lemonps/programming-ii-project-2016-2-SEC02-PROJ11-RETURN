@@ -20,13 +20,13 @@
         
             <div class="container">
         
-             <h1>Upload Video   <i class="glyphicon glyphicon-download-alt"></i></h1> 
+                <h1><b>Upload Video   <i class="glyphicon glyphicon-cloud-upload"></i></b></h1> 
         
                          <hr>
                  
                 <form method="post"  action="UploadFile" enctype="multipart/form-data">
                         <div class="form-group">
-                            <b>Choose a video</b>
+                            <b>Choose a video <i class="glyphicon glyphicon-facetime-video"></i></b>
                             <input type="file"  name="File" class="form-control" placeholder="please upload only 'mp4' file">
                          </div>
                          <button type="submit" class="btn btn-default">Upload</button>

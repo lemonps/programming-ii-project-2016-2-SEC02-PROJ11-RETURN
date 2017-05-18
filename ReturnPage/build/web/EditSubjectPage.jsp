@@ -21,7 +21,7 @@
 
         <div class="container">   
             
-            <h1>Edit Subject  <i class="glyphicon glyphicon-cog"></i></h1>
+            <h1><b>Edit Subject  <i class="glyphicon glyphicon-cog"></i></b></h1>
 
                 <hr><br>
 
@@ -46,7 +46,7 @@
 
                 <br><hr>
            
-            <h2>**Edit new value**</h2>
+                <h2><b>Edit new value <i class="glyphicon glyphicon-edit"></i></b></h2>
 
                 <form method="post" action="Esubject">        
                     <div class="form-group">
