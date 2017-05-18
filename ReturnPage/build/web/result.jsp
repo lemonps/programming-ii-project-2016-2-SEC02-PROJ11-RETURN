@@ -9,19 +9,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div>
-            <a href="subject.jsp" "><img src="stary.png" width="200" height="200"></a> 
-                <c:forEach items="${videos}" var="video" varStatus="vs">
+        <div id = "pz">
+            <c:forEach items="${videos}" var="video" varStatus="vs">
+                
+                <a href="ControlVideo?vid=${video.id}" onClick=""><img src="stary.png" width="200" height="200"></a> 
                 <p>Video Title : ${video.title}</p>
                 <p>Video Description : ${video.desc}</p>
                 <p>Video Lecturer : ${video.lecturer}</p>
                 <p> Video Time : ${video.date_time}</p>
-                <p> Video Path : ${video.path}</p>
-                <p>Video Subject ID : ${video.subject_id}</p>
-            </c:forEach>
-            <c:forEach items="${subject}" var="subjectt" varStatus="sj">
-                <p>Subject Course ID : ${subjectt.course_id}</p>
-                <p>Subject Name : ${subjectt.name}</p>
+
             </c:forEach>
         </div>
     </body>

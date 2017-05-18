@@ -27,20 +27,8 @@ public class SeachVideo extends HttpServlet {
         try {
             List<videos> v = videos.findByTitle(title);
             if (v != null) {
-                if (title.equalsIgnoreCase("calculus")) {
                     request.setAttribute("videos", v);
                     getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
-                } else if (title.equalsIgnoreCase("webtech")) {
-                    request.setAttribute("videos", v);
-                    getServletContext().getRequestDispatcher("/webtech.jsp").forward(request, response);
-                } else if (title.equalsIgnoreCase("computerprogramming")) {
-                    request.setAttribute("videos", v);
-                    getServletContext().getRequestDispatcher("/compro.jsp").forward(request, response);
-                } else if (title.equalsIgnoreCase("platform")) {
-                    request.setAttribute("videos", v);
-                    getServletContext().getRequestDispatcher("/platform.jsp").forward(request, response);
-
-                }
             } else {
                 request.setAttribute("msg", "Not found Video ");
                 getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
