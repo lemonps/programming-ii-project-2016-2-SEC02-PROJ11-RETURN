@@ -17,7 +17,7 @@
 
     </head>
     <body>
-
+            
         <%
             
                 Connection con = ConnectionBuilder.getConnection();
@@ -33,11 +33,10 @@
                 while (rs.next()) {
                     request.setAttribute("text", "Unsubscribe");
                 }
-                con.close();
-
+            
 
         %>
-
+            
         <div id="header">
 
             <div id="image"><img src="logo.png" alt="logo" ></div>                      
@@ -61,7 +60,7 @@
         <br>
         <br>
 
-        <h2>Computer Programimng</h2>
+        <h2>Computer Programming</h2>
 
         <form action="Subscribe">
             <input type="hidden" name="userId" value=${userId}>

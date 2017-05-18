@@ -48,6 +48,10 @@
         <servlet-name>Subscribe</servlet-name>
         <servlet-class>model.Subscribe</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Subscribe1</servlet-name>
+        <servlet-class>model.Subscribe1</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Search</servlet-name>
         <url-pattern>/Search</url-pattern>
@@ -91,6 +95,10 @@
     <servlet-mapping>
         <servlet-name>Subscribe</servlet-name>
         <url-pattern>/Subscribe</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Subscribe1</servlet-name>
+        <url-pattern>/Subscribe1</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

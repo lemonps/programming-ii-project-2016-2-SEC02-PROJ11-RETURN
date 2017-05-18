@@ -33,27 +33,27 @@ public class Subscribe extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        String userId = request.getParameter("userId");
-        session.setAttribute("userId", userId);
-        System.out.println("userId From Subscribe Button = " + userId);
-        String subId = request.getParameter("subId");
-        session.setAttribute("subId", subId);
-        System.out.println("subId = " + subId);
-        request.setAttribute("text", "Subscribe");
-        int uid = Integer.parseInt(userId);
-        int sid = Integer.parseInt(subId);
+        int uid = Integer.parseInt(request.getParameter("userId"));
+             System.out.println("id = " + request.getParameter("userId"));
+        session.setAttribute("userId", uid);
+             System.out.println("userId From Subscribe Button = " + uid);
+        int sid = Integer.parseInt(request.getParameter("subId"));
+        session.setAttribute("subId", sid);
+             System.out.println("subId = " + sid);
+        
+        
         
         try {
             Connection con = ConnectionBuilder.getConnection();
             String sql;
-            String sql1;
+            /*String sql1;
                 sql1 = "select id from subscription where user_id=? AND subject_id=3";
                 PreparedStatement ps1 = con.prepareStatement(sql1);
                 ps1.setInt(1, uid);
                 ResultSet rs = ps1.executeQuery();
                 while (rs.next()) {
                 request.setAttribute("text", "Unsubscribe");
-            }
+            }*/
 
             if (request.getParameter("subscribeStatus").equals("Subscribe")) {
                 sql = "insert into subscription (user_id , subject_id) values (?,?)";

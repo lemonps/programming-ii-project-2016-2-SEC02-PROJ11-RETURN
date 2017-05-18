@@ -56,34 +56,34 @@
 
     <h2>Calculus</h2>
 
-    <%
+    <jsp:include page="Subscribe1"/>
+   
+        <%
      
+        /*
             Connection con = ConnectionBuilder.getConnection();
             String sql = "select id from subscription where user_id=? AND subject_id=3";
             PreparedStatement ps = con.prepareStatement(sql);
             String userId = request.getParameter("userId");
             request.getSession().setAttribute("userId", userId);
-            int uid = Integer.parseInt(userId);
             request.setAttribute("text", "Subscribe");
+            int uid = Integer.parseInt(userId);
             ps.setInt(1, uid);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
                 request.setAttribute("text", "Unsubscribe");
             }
-            con.close();
-       
-
-
+        */
     %>
 
 
-    <form action="Subscribe">
+    <form action="Subscribe" method="POST">
         <input type="hidden" name="userId" value=${userId}>
         <input type="hidden" name="subId" value="3">
         <input type="hidden" name="jspPath" value="Calculas.jsp">
         <input type="hidden" name="subscribeStatus" value="${text}">
-        <input type="submit" value="${text}" onclick="location.reload(true)"> 
+        <input type="submit" value="${text}" > 
     </form>
 
     <hr>

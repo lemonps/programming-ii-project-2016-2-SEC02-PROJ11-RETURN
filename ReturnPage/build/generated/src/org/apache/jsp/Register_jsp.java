@@ -54,21 +54,12 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <body>\r\n");
       out.write("        <form action=\"RegisterData\">\r\n");
       out.write("            <p>Username : <input type=\"text\" name = \"username\"></p>\r\n");
-<<<<<<< HEAD
-      out.write("            <p>Password : <input type=\"password\"name = \"password\"></p>\r\n");
-      out.write("            <p>Name : <input type=\"text\"name = \"name\"></p>\r\n");
-      out.write("            <p>Surname : <input type=\"text\"name = \"surname\"></p>\r\n");
-      out.write("\r\n");
-      out.write("        \r\n");
-      out.write("        <input type=\"submit\" onlick=\"window.alert('วู้ววววว')\">\r\n");
-=======
       out.write("            <p>Password : <input type=\"password\" name = \"password\"></p>\r\n");
       out.write("            <p>Name : <input type=\"text\" name = \"name\"></p>\r\n");
       out.write("            <p>Surname : <input type=\"text\" name = \"surname\"></p>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("            <input type=\"submit\" onlick=\"window.alert('วู้ววววว')\">\r\n");
->>>>>>> eabfb61f0acf717b741b7a21835340dee7308956
       out.write("        </form>    \r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");

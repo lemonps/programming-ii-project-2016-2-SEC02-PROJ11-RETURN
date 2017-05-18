@@ -9,20 +9,29 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="3.css">
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <script type="text/javascript" src="./js/jquery.js"></script>
+        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+       
         <title>Upload Page</title>
     </head>
+   
     <body>
-        <h1>Upload Video</h1> 
         
-        <hr>
+            <div class="container">
         
-        <div>
-            <form method="post"  action="UploadFile" enctype="multipart/form-data">
-                    <input type="file" name="File" >
-                    <input type="submit" value="Upload">
-                    <p > ****โปรด Upload เฉพาะไฟล์ .mp4****</p>
-            </form>
-        </div>
+             <h1>Upload Video   <i class="glyphicon glyphicon-download-alt"></i></h1> 
+        
+                         <hr>
+                 
+                <form method="post"  action="UploadFile" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <b>Choose a video</b>
+                            <input type="file"  name="File" class="form-control" placeholder="please upload only 'mp4' file">
+                         </div>
+                         <button type="submit" class="btn btn-default">Upload</button>
+                </form>
+            </div>
+       
     </body>
 </html>

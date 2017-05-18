@@ -48,7 +48,10 @@ public final class UploadVideoPage_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"3.css\">\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"./css/bootstrap.min.css\">\n");
+      out.write("        <script type=\"text/javascript\" src=\"./js/jquery.js\"></script>\n");
+      out.write("        <script type=\"text/javascript\" src=\"./js/bootstrap.min.js\"></script>\n");
+      out.write("       \n");
       out.write("        <title>Upload Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
@@ -56,13 +59,15 @@ public final class UploadVideoPage_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        \n");
       out.write("        <hr>\n");
       out.write("        \n");
-      out.write("        <div>\n");
-      out.write("            <form method=\"post\"  action=\"UploadFile\" enctype=\"multipart/form-data\">\n");
-      out.write("                    <input type=\"file\" name=\"File\" >\n");
-      out.write("                    <input type=\"submit\" value=\"Upload\">\n");
-      out.write("                    <p > ****โปรด Upload เฉพาะไฟล์ .mp4****</p>\n");
-      out.write("            </form>\n");
-      out.write("        </div>\n");
+      out.write("\n");
+      out.write("            <div class=\"container\">\n");
+      out.write("                <form method=\"post\"  action=\"UploadFile\" enctype=\"multipart/form-data\">\n");
+      out.write("                        <input type=\"file\" name=\"File\" >\n");
+      out.write("                        <input type=\"submit\" value=\"Upload\">\n");
+      out.write("                        <p > ****โปรด Upload เฉพาะไฟล์ .mp4****</p>\n");
+      out.write("                </form>\n");
+      out.write("            </div>\n");
+      out.write("       \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

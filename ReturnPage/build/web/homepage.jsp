@@ -3,16 +3,19 @@
 <head>
 	<title>PAGE1</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="a.css">
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <script type="text/javascript" src="./js/jquery.js"></script>
+        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
         
 </head>
 <body>
 		
-
-        <div id="all">
+    
+        <div class="container-fluid">
 
             <div id="header">
                         <span>Welcome  Mr. ${name}</span>
+                        <a onclick="LogoutTest"><i class="glyphicon glyphicon-log-out"> Logout</i></a>
                         
                 <form id="searchdata" action="SeachVideo" method="POST">
                     SearchBytitle : <input type="text" name="title">
@@ -37,6 +40,7 @@
                 &nbsp&nbsp&nbsp&nbsp<a href="homepage.jsp" target="_blank">ma-tew</a>
                 &nbsp&nbsp&nbsp&nbsp<a href="homepage.jsp" target="_blank">kookle</a>
                 &nbsp&nbsp&nbsp&nbsp<a href="homepage.jsp" target="_blank">oneforall</a>
+                <button type="submit" onclick="">
             </div>
 
 
@@ -54,9 +58,9 @@
                 <div id="incontent">
                     <ul>
                         <div id="list1"><li><a href="Calculas.jsp?userId=${userId}">CALCULAS</a></li></div><br>
-                        <div id="list2"><li><a href="Compro.jsp">COMPROGRAMMING</a></li></div><br>
-                        <div id="list3"><li><a href="Platform.jsp">PLATFORM</a></li></div><br>
-                        <div id="list4"><li><a href="Webtech.jsp">WEBTECH</a></li></div><br>
+                        <div id="list2"><li><a href="Compro.jsp?userId=${userId}">COMPROGRAMMING</a></li></div><br>
+                        <div id="list1"><li><a href="Platform.jsp?userId=${userId}">PLATFORM</a></li></div><br>
+                        <div id="list2"><li><a href="Webtech.jsp?userId=${userId}">WEBTECH</a></li></div><br>
                         <ul>
                 </div>
 
