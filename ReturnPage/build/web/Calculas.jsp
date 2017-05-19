@@ -16,16 +16,16 @@
         <link rel="stylesheet" type="text/css" href="1.css">
 
         <script>
-           
-            function changeWord() {
-                var word = document.getElementById("myButton1");
-                if (word.value === "Unsubscribe") {
-                    word.value = "Subscribe";
-                } else {
-                    word.value = "Unsubscribe";
-                }  
+
+            function showStar() {
+                temp = document.getElementById('sub').value;
+                if (temp == "Subscribe") {
+                    document.getElementById('abc').style.display = "";
+                } else if (temp == "Unsubscribe") {
+                    document.getElementById('abc').style.display = "none";
+                }
             }
-          
+            
         </script>
 
     </head>
@@ -56,25 +56,24 @@
 
     <h2>Calculus</h2>
 
-    <jsp:include page="Subscribe1"/>
-   
-        <%
-     
-        /*
-            Connection con = ConnectionBuilder.getConnection();
-            String sql = "select id from subscription where user_id=? AND subject_id=3";
-            PreparedStatement ps = con.prepareStatement(sql);
-            String userId = request.getParameter("userId");
-            request.getSession().setAttribute("userId", userId);
-            request.setAttribute("text", "Subscribe");
-            int uid = Integer.parseInt(userId);
-            ps.setInt(1, uid);
-            ResultSet rs = ps.executeQuery();
 
-            while (rs.next()) {
-                request.setAttribute("text", "Unsubscribe");
-            }
-        */
+
+    <%
+
+        Connection con = ConnectionBuilder.getConnection();
+        String sql = "select id from subscription where user_id=? AND subject_id=3";
+        PreparedStatement ps = con.prepareStatement(sql);
+        String userId = request.getParameter("userId");
+        request.getSession().setAttribute("userId", userId);
+        request.setAttribute("text", "Subscribe");
+        int uid = Integer.parseInt(userId);
+        ps.setInt(1, uid);
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+            request.setAttribute("text", "Unsubscribe");
+        }
+
     %>
 
 
@@ -83,8 +82,10 @@
         <input type="hidden" name="subId" value="3">
         <input type="hidden" name="jspPath" value="Calculas.jsp">
         <input type="hidden" name="subscribeStatus" value="${text}">
-        <input type="submit" value="${text}" > 
+        <input id="sub" type="submit" value="${text}" onclick="showStar()"> 
     </form>
+
+    <i class="glyphicon glyphicon-star-empty" id="abc"></i>
 
     <hr>
 

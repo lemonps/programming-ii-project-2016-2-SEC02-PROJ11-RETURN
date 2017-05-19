@@ -65,8 +65,8 @@ public class ConnectLogin extends HttpServlet {
                 rd.forward(request, response);
 
             } else {
-                session.setAttribute("msg", "Username or Password incorrect !!");
-                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                session.setAttribute("msg", "Username or Password isn't Correct.");
+                RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
                 rd.include(request, response);
             }
             //System.out.println("userId From Login = " + session.getAttribute("userId"));

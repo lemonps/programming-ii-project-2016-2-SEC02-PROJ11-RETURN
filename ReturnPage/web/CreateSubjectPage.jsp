@@ -35,6 +35,7 @@
             <nav class="navbar navbar-inverse">
                 <div id="navStyle" class="container-fluid">                  
                     <ul class="nav navbar-nav">
+                        <li><a href="Adminpage.jsp">Home</a></li>
                         <li><a href="DeleteSubjectPage.jsp">Delete Subject</a></li>
                         <li><a href="EditSubjectPage.jsp">Edit Subject</a></li>
                         <li><a href="UploadVideoPage.jsp">Upload Video</a></li>

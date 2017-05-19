@@ -16,9 +16,11 @@
         <title>Error Page</title>
     </head>
     <body>
-        <div class="container-fluid"> 
-            <h2 style="color:red">${sessionScope.msg}</h2>
-            <a href="login.jsp" style="color:yellow"> press to go back login again </a>
+        <div class="container"> 
+            <div class="alert alert-warning">
+                <strong>Warning !!  </strong>    ${sessionScope.msg} 
+            </div>
+                <button type="button" class="btn btn-default"><a href="login.jsp"> Press to go back login again </a></button>
         </div>
     </body>
 </html>

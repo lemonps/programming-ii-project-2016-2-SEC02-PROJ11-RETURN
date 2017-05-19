@@ -19,32 +19,51 @@
 
         <title>LOGIN Page</title>
 
+        <style>
+            a{
+                color : maroon;
+                font-weight: bold;
+            }
+            #regisButton{
+                border :2px inset #2F353B;
+            }
+            #signAdButton{
+                border :2px inset #2F353B;
+            }
+        </style>
+        
     </head>
+   
     <body>
-
-
 
         <div class="container">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <h1 class="h1">SIGN IN RETURN 	<i class="glyphicon glyphicon-log-in"></i></h1>  <hr>          
+
+                <h1 class="h1">SIGN IN RETURN <i class="glyphicon glyphicon-log-in"></i></h1>  <hr>          
+
                 <form action="ConnectLogin"  method="POST">
                     <div class="form-group">
                         <i class="glyphicon glyphicon-user"></i>&nbsp<label for="exampleInputEmail1">Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Username">
+                        <input id="user" type="text" name="username" class="form-control" placeholder="Username">
                     </div>
                     <div class="form-group">
                         <i class="glyphicon glyphicon-lock"></i>&nbsp<label for="exampleInputPassword1">Password</label>
-                        <input type="password" name = "password" class="form-control" placeholder="Password">
+                        <input id="pass" type="password" name = "password" class="form-control" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                    <button type="button" class="btn btn-default" onclick="/Register.jsp">Register Account</button>
+
+                    <button id="SubmitLogin" type="submit" class="btn btn-default" onclick="checkLogin()">Submit</button><br><br>
+                    <i clsss="glyphicon glyphicon-pencil"></i><button id="regisButton" type="button" class="btn btn-default"><a href="Register.jsp">Register</a></button>
+                    <button id="signAdButton" type="button" class="btn btn-default"><a href="#">Sign in(Admin)</a></button>
+
+                    
                 </form>  
+
             </div>
             <div class="col-md-2"></div>
         </div>
 
-        
+
     </body>
 </html>              
 <!--   <p>Username : <input type="text" name = "username"></p>
