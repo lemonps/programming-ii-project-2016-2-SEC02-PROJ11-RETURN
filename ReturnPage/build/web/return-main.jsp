@@ -8,7 +8,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <a href="result.jsp"></a>
         <meta charset="utf-8" />
         <title>KADEMY | STRONGEST LEARNING PLATFORM FOR KMUTT STUDENT</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -147,7 +146,7 @@
                                 <!-- END TOP NAVIGATION MENU -->
                             </div>
                         </div>
-                        <form id="searchdata" action="SeachVideo" method="POST" onsubmit="return Check();" >
+                        <form id="searchdata" action="SearchV" method="POST" onsubmit="return Check();" >
                             <div class="search-page search-content-2">
                                 <div class="search-bar">
                                     <div class="input-group">

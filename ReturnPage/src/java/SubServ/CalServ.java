@@ -7,19 +7,12 @@ package SubServ;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.ConnectionBuilder;
 import model.videos;
 
 /**
@@ -41,13 +34,12 @@ public class CalServ extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
                response.setContentType("text/html;charset=UTF-8");
-        String title = "calcalus";
         try {
             List<videos> v = videos.findByTitle("Cal");
         
             if (v != null) {
                     request.setAttribute("videos", v);
-                    getServletContext().getRequestDispatcher("/Calculas.jsp").forward(request, response);
+                    getServletContext().getRequestDispatcher("/Platform.jsp").forward(request, response);
             } else {
                 request.setAttribute("msg", "Not found Video ");
                 getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);

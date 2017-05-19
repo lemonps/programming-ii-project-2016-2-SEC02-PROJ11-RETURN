@@ -23,6 +23,19 @@
 
             <h1><b>Edit Subject  <i class="glyphicon glyphicon-cog"></i></b></h1>
 
+            <hr>
+
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">                  
+                    <ul class="nav navbar-nav">
+                        <li><a href="Adminpage.jsp">Home</a></li>
+                        <li><a href="CreateSubjectPage.jsp">Create Subject</a></li>
+                        <li><a href="DeleteSubjectPage.jsp">Delete Subject</a></li>
+                        <li><a href="UploadVideoPage.jsp">Upload Video</a></li>
+                    </ul>
+                </div>
+            </nav>
+
             <hr><br>
 
             <table class="table table-striped">

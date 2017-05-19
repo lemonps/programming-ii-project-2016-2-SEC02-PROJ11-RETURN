@@ -22,6 +22,17 @@
         <div class="container">
             <h1><b>Create Subject <i class="glyphicon glyphicon-plus"></i></b></h1>       
             <hr>
+           
+            <nav class="navbar navbar-inverse">
+                <div id="navStyle" class="container-fluid">                  
+                    <ul class="nav navbar-nav">
+                        <li><a href="Adminpage.jsp">Home</a></li>
+                        <li><a href="DeleteSubjectPage.jsp">Delete Subject</a></li>
+                        <li><a href="EditSubjectPage.jsp">Edit Subject</a></li>
+                        <li><a href="UploadVideoPage.jsp">Upload Video</a></li>
+                    </ul>
+                </div>
+            </nav>
 
             <table class="table table-striped">
                 <tr>

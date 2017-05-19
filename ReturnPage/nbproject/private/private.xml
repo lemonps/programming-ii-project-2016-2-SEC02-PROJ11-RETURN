@@ -3,14 +3,33 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/ReturnFinal/ReturnPage/web/EditSubjectPage.jsp</file>
-            <file>file:/D:/ReturnFinal/ReturnPage/src/java/model/CreateSub.java</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/src/conf/MANIFEST.MF</file>
             <file>file:/D:/ReturnFinal/ReturnPage/nbproject/build-impl.xml</file>
-            <file>file:/D:/ReturnFinal/ReturnPage/web/Register.jsp</file>
-            <file>file:/D:/ReturnFinal/ReturnPage/web/result.jsp</file>
-            <file>file:/D:/ReturnFinal/ReturnPage/src/java/Register/RegisterData.java</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/return-main.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/src/java/model/Esubject.java</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/ViewVideo.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/SubmitRegister.jsp</file>
             <file>file:/D:/ReturnFinal/ReturnPage/src/java/model/ConnectLogin.java</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/src/java/model/SeachVideo.java</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/EditSubjectPage.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/Compro.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/WEB-INF/web.xml</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/Register.jsp</file>
             <file>file:/D:/ReturnFinal/ReturnPage/web/CreateSubjectPage.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/DeleteSubjectPage.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/Calculas.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/Adminpage.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/UploadVideoPage.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/src/java/model/ControlVideo.java</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/src/java/LoginAd/LogServ.java</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/assets/global/scripts/app.js</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/src/java/Login/LoginData.java</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/assets/global/plugins/jquery.blockui.min.js</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/lognAdmin.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/Webtech.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/Platform.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/result.jsp</file>
+            <file>file:/D:/ReturnFinal/ReturnPage/web/login.jsp</file>
         </group>
     </open-files>
 </project-private>

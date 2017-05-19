@@ -38,7 +38,7 @@ public class LogServ extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
         try {
             response.setContentType("text/html;charset=UTF-8");
 
@@ -53,7 +53,7 @@ public class LogServ extends HttpServlet {
             //System.out.println("password = "+password);
             Connection conn = ConnectionBuilder.getConnection();
             Statement stm = conn.createStatement();
-            
+
             ResultSet rs = stm.executeQuery("select admin.id from admin where username='" + username + "' AND password='" + password + "'");
 //            int userId = 0;
 //            String name = null;
@@ -69,7 +69,6 @@ public class LogServ extends HttpServlet {
             if (LoginAd.checkLogin(username, password)) {
                 RequestDispatcher rd = request.getRequestDispatcher("/Adminpage.jsp");
                 rd.forward(request, response);
-               
 
             } else {
                 session.setAttribute("msg", "Username or Password incorrect !!");

@@ -1,8 +1,13 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="model.ConnectionBuilder"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+
         <style>
             #contentMaster{
                 display: flex;
@@ -26,7 +31,6 @@
 
             }
         </style>
-        <meta charset="utf-8" />
         <title>KADEMY | STRONGEST LEARNING PLATFORM FOR KMUTT STUDENT</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -45,6 +49,22 @@
         <link href="assets/global/plugins/cubeportfolio/css/cubeportfolio.css" rel="stylesheet" type="text/css" />
         <link href="assets/pages/css/portfolio.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="assets/style.css">
+        <title>Calculus</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="1.css">
+
+        <script>
+
+            function showStar() {
+                temp = document.getElementById('sub').value;
+                if (temp == "Subscribe") {
+                    document.getElementById('abc').style.display = "";
+                } else if (temp == "Unsubscribe") {
+                    document.getElementById('abc').style.display = "none";
+                }
+            }
+
+        </script>
 
     </head>
     <body class="page-container-bg-solid page-md">
@@ -135,6 +155,49 @@
 
 
                                         <!-- BEGIN INBOX DROPDOWN -->
+                                        <div id="header">
+
+                                            <div id="image"><img src="logo.png" alt="logo" ></div>                      
+                                            <h1>RETURN</h1>  
+
+                                        </div>
+
+
+                                        <div id="nav">
+                                            <table>
+                                                <tr>
+                                                    <th><a href="Home.html" target="_blank">Home</a></th>
+                                                    <th><a href="Return.html" target="_blank">Return</a></th>
+                                                    <th><a href="ma-tew.html" target="_blank">ma-tew</a></th>
+                                                    <th><a href="kookle.html" target="_blank">kookle</a></th>
+                                                    <th><a href="oneforall.html" target="_blank">oneforall</a></th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <br>
+                                        <br>
+
+                                        <h2>Calculus</h2>
+
+
+
+                                        <%
+
+                                            Connection con = ConnectionBuilder.getConnection();
+                                            String sql = "select id from subscription where user_id=? AND subject_id=3";
+                                            PreparedStatement ps = con.prepareStatement(sql);
+                                            String userId = request.getParameter("userId");
+                                            request.getSession().setAttribute("userId", userId);
+                                            request.setAttribute("text", "Subscribe");
+                                            int uid = Integer.parseInt(userId);
+                                            ps.setInt(1, uid);
+                                            ResultSet rs = ps.executeQuery();
+
+                                            while (rs.next()) {
+                                                request.setAttribute("text", "Unsubscribe");
+                                            }
+
+                                        %>
 
                                         <!-- BEGIN USER LOGIN DROPDOWN -->
                                         <li class="dropdown dropdown-user dropdown-dark">
@@ -169,6 +232,7 @@
                         <!-- BEGIN HEADER MENU -->
                         <div class="page-header-menu">
 
+                            <<<<<<< HEAD
                             <div class="container">
                                 <div class="hor-menu">
                                     <ul class="nav navbar-nav">
@@ -196,6 +260,17 @@
                                     </ul>
                                 </div>
                             </div>
+                            <form action="Subscribe" method="POST">
+                                <input type="hidden" name="userId" value=${userId}>
+                                <input type="hidden" name="subId" value="3">
+                                <input type="hidden" name="jspPath" value="Calculas.jsp">
+                                <input type="hidden" name="subscribeStatus" value="${text}">
+                                <input id="sub" type="submit" value="${text}" onclick="showStar()"> 
+                            </form>
+
+                            <i class="glyphicon glyphicon-star-empty" id="abc"></i>
+
+                            <hr>
 
                         </div>
                         <!-- END HEADER MENU -->
@@ -296,168 +371,6 @@
 
                                                             </div>
 
-                                                            <!--                                                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                            
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                            
-                                                                                                                                    <h3 class="mt-card-name">MTH101 CALCULUS I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">Video ID : ${video.id}</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">Video Title : ${video.title}</p>        
-                                                            
-                                                            
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>-->
-
-                                                            <!--- CARD --->
-                                                            <!--- CARD --->
-                                                            <!--                                                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                                                                                                    <h3 class="mt-card-name">MTH101 CALCULUS I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">AJ. KASEM KEETAK</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">SEC.3 8.30-11.30</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">12 NOV 2016</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                        - CARD -
-                                                                                                                        - CARD -
-                                                                                                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                                                                                                    <h3 class="mt-card-name">MTH101 CALCULUS I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">AJ. KASEM KEETAK</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">SEC.1 8.30-11.30</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">11 NOV 2016</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                        - CARD -
-                                                                                                                        - CARD -
-                                                                                                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                                                                                                    <h3 class="mt-card-name">PHY101 PHYSIC I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">AJ. ARAYA ROCKER</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">SEC.1 12.30-15.30</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">11 NOV 2016</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                        - CARD -
-                                                                                                                        - CARD -
-                                                                                                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                                                                                                    <h3 class="mt-card-name">PHY101 PHYSIC I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">AJ. ARAYA ROCKER</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">SEC.1 12.30-15.30</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">11 NOV 2016</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                        - CARD -
-                                                                                                                        - CARD -
-                                                                                                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                                                                                                    <h3 class="mt-card-name">PHY101 PHYSIC I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">AJ. ARAYA ROCKER</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">SEC.1 12.30-15.30</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">11 NOV 2016</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                        - CARD -
-                                                                                                                        - CARD -
-                                                                                                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                                                                                                    <h3 class="mt-card-name">PHY101 PHYSIC I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">AJ. ARAYA ROCKER</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">SEC.1 12.30-15.30</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">11 NOV 2016</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                        - CARD -
-                                                                                                                        - CARD -
-                                                                                                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                                                                                                    <h3 class="mt-card-name">PHY101 PHYSIC I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">AJ. ARAYA ROCKER</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">SEC.1 12.30-15.30</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">11 NOV 2016</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                        - CARD -
-                                                                                                                        - CARD -
-                                                                                                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                                                                                                    <h3 class="mt-card-name">PHY101 PHYSIC I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">AJ. ARAYA ROCKER</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">SEC.1 12.30-15.30</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">11 NOV 2016</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                        - CARD -
-                                                                                                                        - CARD -
-                                                                                                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                                            
-                                                                                                                            <div class="mt-card-item">
-                                                                                                                                <div class="mt-card-avatar mt-overlay-1">
-                                                                                                                                    <a href="view-video-return.html"><img src="img/stary.png"></a>
-                                                                                                                                </div>
-                                                                                                                                <div class="mt-card-content">
-                                                                                                                                    <h3 class="mt-card-name">PHY101 PHYSIC I</h3>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">AJ. ARAYA ROCKER</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">SEC.1 12.30-15.30</p>
-                                                                                                                                    <p class="mt-card-desc font-grey-cararra">11 NOV 2016</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>-->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -471,13 +384,9 @@
                     </div>
                 </div>
             </div>
-            - End content
-            begin footer 
             <div class="page-wrapper-row">
                 <div class="page-wrapper-bottom">
-                    BEGIN FOOTER 
-
-                    BEGIN INNER FOOTER 
+      
                     <div class="page-footer">
                         <div class="container"> 2016 &copy; KADEMY 2016
                         </div>
@@ -485,8 +394,6 @@
                     <div class="scroll-to-top">
                         <i class="icon-arrow-up"></i>
                     </div>
-                    END INNER FOOTER 
-                    END FOOTER 
                 </div>
             </div>
         </div>
@@ -498,10 +405,7 @@
         <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
         <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
         <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
-        END THEME GLOBAL SCRIPTS 
-        <script src="assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js" type="text/javascript"></script>
-
-        BEGIN THEME LAYOUT SCRIPTS 
+        <script src="assets/global/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js" type="text/javascript"></script
         <script src="assets/layouts/layout3/scripts/layout.min.js" type="text/javascript"></script>
         <script src="assets/layouts/layout3/scripts/demo.min.js" type="text/javascript"></script>
         <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>

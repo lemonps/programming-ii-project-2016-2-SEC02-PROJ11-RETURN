@@ -23,7 +23,15 @@
         <link href="assets/layouts/layout3/css/layout.css" rel="stylesheet" type="text/css" />
         <link href="assets/layouts/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color" />
         <link href="assets/layouts/layout3/css/custom.css" rel="stylesheet" type="text/css" />
+        
         <link rel="shortcut icon" href="favicon.ico" />
+        <style>
+            a{
+             color:black;   
+                
+            }
+            
+        </style>
     </head>
     <body class="page-container-bg-solid page-md">
         <div class="page-wrapper">
@@ -89,14 +97,17 @@
                                                             <div class="form-actions">
                                                                 <div class="row">
                                                                     <div class="col-md-offset-2 col-md-10">
-                                                                        <input type="submit" onclick="" class="btn-default" value="Sign in" disable>
+                                                                        <input type="submit" onclick="" id="loginbtn" class="btn btn-default" value="Sign in" disable>
+                                                                        <i clsss="glyphicon glyphicon-pencil"></i><button id="regisButton" type="button" class="btn btn-default"><a href="Register.jsp">Register</a></button>
+                                                                        <button id="signAdButton" type="button" class="btn btn-default"><a href="#">Sign in(Admin)</a></button>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                   
-                                                </div>
-                                                                                                            </form>
 
+                                                        </div>
+                                                    </form>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +117,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         <div class="page-wrapper-row">
             <div class="page-wrapper-bottom">

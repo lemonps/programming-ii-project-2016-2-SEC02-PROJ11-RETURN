@@ -11,7 +11,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="3.css">
+                <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <script type="text/javascript" src="./js/jquery.js"></script>
+        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
@@ -20,7 +22,16 @@
             <hr>
             <table border = "1">
                 <tr><th>ID</th><th>Name</th><th>Course_id</th><th>Delete</th></tr>
-
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">                  
+                    <ul class="nav navbar-nav">
+                        <li><a href="Adminpage.jsp">Home</a></li>
+                        <li><a href="CreateSubjectPage.jsp">Create Subject</a></li>
+                        <li><a href="EditSubjectPage.jsp">Edit Subject</a></li>
+                        <li><a href="UploadVideoPage.jsp">Upload Video</a></li>
+                    </ul>
+                </div>
+            </nav>
                 <%ResultSet rs = ShowData.showData();%>
                 <%while (rs.next()) {%>
                 <tr>
