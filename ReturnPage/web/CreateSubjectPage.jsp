@@ -15,14 +15,35 @@
         <script type="text/javascript" src="./js/jquery.js"></script>
         <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
-        <title>Create subject Page</title>
+        <title>Create Page</title>
+        
+        <style>
+            h1,h2{
+                text-shadow: 1px 1.5px #808080;
+            }
+        </style>
+   
     </head>
     <body>
 
         <div class="container">
-            <h1><b>Create Subject <i class="glyphicon glyphicon-plus"></i></b></h1>       
-                <hr>
 
+            <h1><b>Create Subject <i class="glyphicon glyphicon-plus"></i></b></h1>       
+            
+            <hr>
+           
+            <nav class="navbar navbar-inverse">
+                <div id="navStyle" class="container-fluid">                  
+                    <ul class="nav navbar-nav">
+                        <li><a href="DeleteSubjectPage.jsp">Delete Subject</a></li>
+                        <li><a href="EditSubjectPage.jsp">Edit Subject</a></li>
+                        <li><a href="UploadVideoPage.jsp">Upload Video</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <hr>
+            <b>Table Data</b>
             <table class="table table-striped">
                 <tr>
                     <th>ID</th>
@@ -42,17 +63,17 @@
 
             </table>
 
-                <hr>
-            
-                <h2><b>Create Subject <i class="glyphicon glyphicon-plus-sign"></i></b></h2>
-           
+            <hr>
+
+            <h2><b>Create Subject <i class="glyphicon glyphicon-plus-sign"></i></b></h2>
+
             <form method="POST" action="CreateSub"> 
                 <p><b>id : </b><input type="text" name="id" class="form-control" placeholder="enter id of subject"></p>               
                 <p><b>Subject name: </b><input type="text" name="name" class="form-control" placeholder="enter name of subject"></p>                
                 <p><b>Course_id : </b><input type="text" name="course_id" class="form-control" placeholder="enter course id of subject"></p>
                 <input type="submit" name="submit" class="btn btn-default" value="Create">                    
             </form>                      
-       
+
         </div>
 
     </body>

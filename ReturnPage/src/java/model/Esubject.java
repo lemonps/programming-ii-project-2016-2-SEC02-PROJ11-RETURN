@@ -55,7 +55,7 @@ public class Esubject extends HttpServlet {
 //                ps.setInt(3, eid);
             i = ps.executeUpdate();
             if (i > 0) {
-                getServletContext().getRequestDispatcher("/test1.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/EditSubjectPage.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             System.out.println(e);
@@ -89,6 +89,8 @@ public class Esubject extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        String edid = request.getParameter("selectValue");
+        System.out.println(edid);
     }
 
     /**

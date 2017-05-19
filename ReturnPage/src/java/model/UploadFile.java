@@ -38,7 +38,7 @@ public class UploadFile extends HttpServlet {
                 }
             }
         }
-        getServletContext().getRequestDispatcher("/test.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/UploadVideoPage.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
