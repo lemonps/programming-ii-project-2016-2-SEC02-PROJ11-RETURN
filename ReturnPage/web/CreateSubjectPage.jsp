@@ -15,35 +15,14 @@
         <script type="text/javascript" src="./js/jquery.js"></script>
         <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
-        <title>Create Page</title>
-        
-        <style>
-            h1,h2{
-                text-shadow: 1px 1.5px #808080;
-            }
-        </style>
-   
+        <title>Create subject Page</title>
     </head>
     <body>
 
         <div class="container">
-
             <h1><b>Create Subject <i class="glyphicon glyphicon-plus"></i></b></h1>       
-            
             <hr>
-           
-            <nav class="navbar navbar-inverse">
-                <div id="navStyle" class="container-fluid">                  
-                    <ul class="nav navbar-nav">
-                        <li><a href="DeleteSubjectPage.jsp">Delete Subject</a></li>
-                        <li><a href="EditSubjectPage.jsp">Edit Subject</a></li>
-                        <li><a href="UploadVideoPage.jsp">Upload Video</a></li>
-                    </ul>
-                </div>
-            </nav>
 
-            <hr>
-            <b>Table Data</b>
             <table class="table table-striped">
                 <tr>
                     <th>ID</th>

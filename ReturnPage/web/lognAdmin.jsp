@@ -64,11 +64,11 @@
                                                 <div class="portlet-title">
                                                     <div class="caption font-kademy">
                                                         <i class="icon-settings font-kademy"></i>
-                                                        <span class="caption-subject bold uppercase"> Login </span>
+                                                        <span class="caption-subject bold uppercase"> Login Admin</span>
                                                     </div>
                                                 </div>
                                                 <div class="portlet-body form">
-                                                    <form role="form" id="form_sample_2" class="form-horizontal" action="ConnectLogin" method="post">
+                                                    <form role="form" id="form_sample_2" class="form-horizontal" action="LogServ" method="post" onsubmit="Check()">
 
                                                         <div class="form-body">
 
@@ -93,10 +93,11 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                   
-                                                </div>
-                                                                                                            </form>
 
+                                                        </div>
+                                                    </form>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +107,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         <div class="page-wrapper-row">
             <div class="page-wrapper-bottom">

@@ -3,23 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package LoginAd;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.ConnectionBuilder;
 
 /**
  *
- * @author Lemon
+ * @author homun
  */
-public class ConnectLogin extends HttpServlet {
+@WebServlet(name = "LogServ", urlPatterns = {"/LogServ"})
+public class LogServ extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,6 +38,7 @@ public class ConnectLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       
         try {
             response.setContentType("text/html;charset=UTF-8");
 
@@ -46,34 +53,35 @@ public class ConnectLogin extends HttpServlet {
             //System.out.println("password = "+password);
             Connection conn = ConnectionBuilder.getConnection();
             Statement stm = conn.createStatement();
-
-            ResultSet rs = stm.executeQuery("select user.id,user.name from user where username='" + username + "' AND password='" + password + "'");
-            int userId = 0;
-            String name = null;
-
-            while (rs.next()) {
-                userId = rs.getInt("id");
-                name = rs.getString("name");
-            }
-
-            session.setAttribute("userId", userId);
-            session.setAttribute("name", name);
-
-            if (LoginFormDB.checkLogin(username, password)) {
-                RequestDispatcher rd = request.getRequestDispatcher("/return-main.jsp");
+            
+            ResultSet rs = stm.executeQuery("select admin.id from admin where username='" + username + "' AND password='" + password + "'");
+//            int userId = 0;
+//            String name = null;
+//
+//            while (rs.next()) {
+//                
+//               // userId = rs.getInt("id");
+//                //name = rs.getString("username");
+//            }
+            //session.setAttribute("userId", userId);
+            //session.setAttribute("username", name);
+            session.setAttribute("username", username);
+            if (LoginAd.checkLogin(username, password)) {
+                RequestDispatcher rd = request.getRequestDispatcher("/Adminpage.jsp");
                 rd.forward(request, response);
+               
 
             } else {
                 session.setAttribute("msg", "Username or Password incorrect !!");
-                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
-                rd.include(request, response);
+                // RequestDispatcher rd = request.getRequestDispatcher("/welcomeToDelete.jsp");
+                //rd.include(request, response);
+                getServletContext().getRequestDispatcher("/loginAdmin.jsp").forward(request, response);
             }
             //System.out.println("userId From Login = " + session.getAttribute("userId"));
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//            System.out.close();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

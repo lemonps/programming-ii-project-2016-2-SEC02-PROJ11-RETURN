@@ -3,23 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package SubServ;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.ConnectionBuilder;
+import model.videos;
 
 /**
  *
- * @author Lemon
+ * @author homun
  */
-public class ConnectLogin extends HttpServlet {
+@WebServlet(name = "CalServ", urlPatterns = {"/CalServ"})
+public class CalServ extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,48 +40,23 @@ public class ConnectLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+               response.setContentType("text/html;charset=UTF-8");
+        String title = "calcalus";
         try {
-            response.setContentType("text/html;charset=UTF-8");
-
-            HttpSession session = request.getSession();
-            String username = request.getParameter("username");
-            session.setAttribute("username", username);
-
-            //System.out.println("username = "+username);
-            String password = request.getParameter("password");
-            session.setAttribute("password", password);
-
-            //System.out.println("password = "+password);
-            Connection conn = ConnectionBuilder.getConnection();
-            Statement stm = conn.createStatement();
-
-            ResultSet rs = stm.executeQuery("select user.id,user.name from user where username='" + username + "' AND password='" + password + "'");
-            int userId = 0;
-            String name = null;
-
-            while (rs.next()) {
-                userId = rs.getInt("id");
-                name = rs.getString("name");
-            }
-
-            session.setAttribute("userId", userId);
-            session.setAttribute("name", name);
-
-            if (LoginFormDB.checkLogin(username, password)) {
-                RequestDispatcher rd = request.getRequestDispatcher("/return-main.jsp");
-                rd.forward(request, response);
-
+            List<videos> v = videos.findByTitle("Cal");
+        
+            if (v != null) {
+                    request.setAttribute("videos", v);
+                    getServletContext().getRequestDispatcher("/Calculas.jsp").forward(request, response);
             } else {
-                session.setAttribute("msg", "Username or Password incorrect !!");
-                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
-                rd.include(request, response);
+                request.setAttribute("msg", "Not found Video ");
+                getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
             }
-            //System.out.println("userId From Login = " + session.getAttribute("userId"));
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+            
+        } catch (NullPointerException e) {
+            System.out.println(e);
         }
-//            System.out.close();
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -1,32 +1,235 @@
- <%-- 
-    Document   : Adminpage
-    Created on : Mar 30, 2017, 4:21:42 PM
-    Author     : Lemon
---%>
+<!DOCTYPE html>
 <html>
-    <head>  
-        <title> Admin Page</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-        <script type="text/javascript" src="./js/jquery.js"></script>
-        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-        
-       
+    <head>
+        <meta charset="utf-8" />
+        <title>KADEMY | STRONGEST LEARNING PLATFORM FOR KMUTT STUDENT</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/simple-line-icons/simple-line-icons.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.css" rel="stylesheet" type="text/css" />
+        <link href="assets/global/css/components-md.css" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="assets/global/css/plugins-md.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout3/css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="assets/layouts/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="assets/layouts/layout3/css/custom.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link href="assets/pages/css/search.css" rel="stylesheet" type="text/css" />
+        <link href="assets/apps/css/todo.css" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" type="text/css" href="assets/style.css">
+        <!-- END HEAD -->
     </head>
-    
-    <body>
-        <h1>Hello Admin</h1>
-        <hr>
-          
-            <table class="table table-striped">
-                  
-                    <tr><td><a href="UploadVideoPage.jsp">Upload Videos</a></td></tr>
-                    <tr><td><a href="EditSubjectPage.jsp">Edit Subject</a></td></tr>
-                    <tr><td><a href="CreateSubjectPage.jsp">Create Subject</a></td></tr>
-                    <tr><td><a href="welcomeToDelete.jsp">Delete Subject</a></td></tr>
-                
-            </table>
-        </div>    
-            
+    <body class="page-container-bg-solid page-md">
+        <div class="page-wrapper">
+            <div class="page-wrapper-row">
+                <div class="page-wrapper-top">
+                    <!-- BEGIN HEADER -->
+                    <div class="page-header">
+                        <!-- BEGIN HEADER TOP -->
+                        <div class="page-header-top">
+                            <div class="container">
+                                <!-- BEGIN LOGO -->
+                                <div class="page-logo">
+                                    <div class="container">
+                                        <a href="index.html">
+                                            <img src="img/kademy.png" alt="logo" width="70px" height="70px"> Admin
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- END LOGO -->
+                                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                                <a href="javascript:;" class="menu-toggler"></a>
+                                <!-- END RESPONSIVE MENU TOGGLER -->
+                                <!-- BEGIN TOP NAVIGATION MENU -->
+                                <div class="top-menu">
+                                    <ul class="nav navbar-nav pull-right">
+                                        <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                <i class="icon-bell"></i>
+                                                <span class="badge badge-default">2</span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li class="external">
+                                                    <h3>Your
+                                                        <strong>Notification</strong> tasks</h3>
+                                                    <a href="admin-notification.html">view all</a>
+                                                </li>
+                                                <li>
+                                                    <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                                        <li>
+                                                            <a href="report-detail.html">
+                                                                <span class="time">just now</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-success">
+                                                                        <i class="fa fa-plus"></i>
+                                                                    </span> New Report From Mrs.JAraya Eiei </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="report-detail.html">
+                                                                <span class="time">10 mins</span>
+                                                                <span class="details">
+                                                                    <span class="label label-sm label-icon label-warning">
+                                                                        <i class="fa fa-bell-o"></i>
+                                                                    </span> New answer on Omise re-brand </span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+
+                                        <!-- BEGIN INBOX DROPDOWN -->
+
+                                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                                        <li class="dropdown dropdown-user dropdown-dark">
+                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                <span class="username">MR . Admin Administrator</span>
+                                            </a>
+                                        </li>
+                                        <!-- END USER LOGIN DROPDOWN -->
+                                        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                                        <li class="dropdown dropdown-extended quick-sidebar-toggler">
+                                            <span class="sr-only">Toggle Quick Sidebar</span>
+                                            <i class="icon-logout"></i>
+                                        </li>
+                                        <!-- END QUICK SIDEBAR TOGGLER -->
+                                    </ul>
+                                </div>
+                                <!-- END TOP NAVIGATION MENU -->
+                            </div>
+                        </div>
+                        <!-- END HEADER TOP -->
+                        <!-- BEGIN HEADER MENU -->
+                        <div class="page-header-menu">
+
+                            <div class="container">
+                                <div class="hor-menu">
+                                    <ul class="nav navbar-nav">
+                                        <li >
+                                            <a  href="admin-index.html">Home
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="return-main.jsp">Return
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="admin-matew.html">Ma-Tew
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="admin-kookle.html">Kookle
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="admin-one-4-all.html">One for all
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- END HEADER MENU -->
+                    </div>
+                    <!-- END HEADER -->
+                </div>
+            </div>
+            <div class="page-wrapper-row full-height">
+                <div class="page-wrapper-middle">
+                    <div class="page-container">
+                        <div class="page-content-wrapper">
+                            <div class="page-content">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="portlet light">
+                                                <div class="portlet-title">
+                                                    <div class="caption font-kademy">
+                                                        <span class="caption-subject bold uppercase">What do you want to do ?</span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="portlet-body form">
+                                                    <div class="mt-element-list">
+                                                        <div class="mt-list-container list-simple">
+                                                            <ul>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-item-content">
+                                                                        <h3 class="uppercase">
+                                                                            <a style="color:white;" href="CreateSubjectPage.jsp">Create Subject</a>
+                                                                        </h3>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-item-content">
+                                                                        <h3 class="uppercase">
+                                                                            <a style="color: white;" href="EditSubjectPage.jsp" >Edit Subject</a>
+                                                                        </h3>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-item-content">
+                                                                        <h3 class="uppercase">
+                                                                            <a style="color: white;" href="DeleteSubjectPage.jsp">Delete Subject</a>
+                                                                        </h3>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="mt-list-item">
+                                                                    <div class="list-item-content">
+                                                                        <h3 class="uppercase">
+                                                                            <a style="color: white;" href="UploadVideoPage.jsp">Upload Video</a>
+                                                                        </h3>
+                                                                    </div>
+                                                                </li>
+
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-wrapper-row">
+                <div class="page-wrapper-bottom">
+                    <!-- BEGIN FOOTER -->
+
+                    <!-- BEGIN INNER FOOTER -->
+                    <div class="page-footer">
+                        <div class="container"> 2016 &copy; KADEMY 2016
+                        </div>
+                    </div>
+                    <div class="scroll-to-top">
+                        <i class="icon-arrow-up"></i>
+                    </div>
+                    <!-- END INNER FOOTER -->
+                    <!-- END FOOTER -->
+                </div>
+            </div>
+        </div>
+        <script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout3/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/layout3/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
     </body>
 </html>

@@ -16,12 +16,6 @@
         <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
         <title>Edit Page</title>
-
-        <style>
-            h1,h2{
-                text-shadow: 1px 1.5px #808080;
-            }
-        </style>
     </head>
     <body>
 
@@ -29,20 +23,8 @@
 
             <h1><b>Edit Subject  <i class="glyphicon glyphicon-cog"></i></b></h1>
 
-            <hr>
-
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">                  
-                    <ul class="nav navbar-nav">
-                        <li><a href="CreateSubjectPage.jsp">Create Subject</a></li>
-                        <li><a href="DeleteSubjectPage.jsp">Delete Subject</a></li>
-                        <li><a href="UploadVideoPage.jsp">Upload Video</a></li>
-                    </ul>
-                </div>
-            </nav>
-
             <hr><br>
-            <b>Table Data</b>
+
             <table class="table table-striped">
                 <tr>
                     <th>ID</th>
@@ -56,7 +38,7 @@
                     <td><%out.print(rs.getInt("id"));%></td>
                     <td><%out.print(rs.getString("name"));%></td>
                     <td><%out.print(rs.getString("course_id"));%></td>
-                    <td><input type="radio" name = "selectValue" value="<%out.print(rs.getInt("id"));%>"></td>
+
                 </tr>
                 <%}%> 
 
@@ -66,9 +48,10 @@
 
             <h2><b>Edit new value <i class="glyphicon glyphicon-edit"></i></b></h2>
 
-            <form method="POST" action="Esubject">        
+            <form method="post" action="Esubject">        
                 <div class="form-group">
-                    <input type="hidden"  name="id" class="form-control" placeholder="enter id of subject" value="">
+                    <b>id : </b>
+                    <input type="text"  name="id" class="form-control" placeholder="enter id of subject">
                 </div>
                 <div class="form-group">
                     <b>Edit name to : </b>
