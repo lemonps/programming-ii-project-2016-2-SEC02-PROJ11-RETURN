@@ -50,6 +50,9 @@ public class CreateSub extends HttpServlet {
             if (insertRound > 0) {
                 System.out.print("Created success");
                 getServletContext().getRequestDispatcher("/CreateSubjectPage.jsp").forward(request, response);
+            }else if(insertRound == 0){
+                getServletContext().getRequestDispatcher("/CreateSubjectPage.jsp").forward(request, response);
+                System.out.println("create fail");
             }
         } catch (SQLException e) {
             System.out.println(e);

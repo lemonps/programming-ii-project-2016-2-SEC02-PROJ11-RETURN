@@ -62,6 +62,9 @@ public final class EditSubjectPage_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            h1,h2{\n");
       out.write("                text-shadow: 1px 1.5px #808080;\n");
       out.write("            }\n");
+      out.write("            hr{\n");
+      out.write("               border : 1.5px inset #3e4f5e;\n");
+      out.write("            }\n");
       out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
@@ -75,6 +78,7 @@ public final class EditSubjectPage_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            <nav class=\"navbar navbar-inverse\">\n");
       out.write("                <div class=\"container-fluid\">                  \n");
       out.write("                    <ul class=\"nav navbar-nav\">\n");
+      out.write("                        <li><a href=\"Adminpage.jsp\">Home</a></li>\n");
       out.write("                        <li><a href=\"CreateSubjectPage.jsp\">Create Subject</a></li>\n");
       out.write("                        <li><a href=\"DeleteSubjectPage.jsp\">Delete Subject</a></li>\n");
       out.write("                        <li><a href=\"UploadVideoPage.jsp\">Upload Video</a></li>\n");

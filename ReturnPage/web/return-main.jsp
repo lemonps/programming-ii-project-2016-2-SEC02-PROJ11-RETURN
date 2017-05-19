@@ -233,7 +233,7 @@
                                                         <div class="row" >
                                                             <div class="col-md-6">
                                                                 <div class="todo-container">
-                                                                    <a href="CalServ" onClick="">	<ul class="todo-projects-container">
+                                                                    <a href="CalculusServ" onClick="">	<ul class="todo-projects-container">
                                                                             <li class="todo-projects-item">
                                                                                 <h3>MTH 101 : CALCULUS I</h3>
 

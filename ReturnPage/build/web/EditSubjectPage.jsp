@@ -1,9 +1,3 @@
-<%-- 
-    Document   : EditPage
-    Created on : Apr 13, 2017, 1:38:54 PM
-    Author     : Lemon
---%>
-
 <%@page import="model.ShowData"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,14 +10,24 @@
         <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 
         <title>Edit Page</title>
+
+        <style>
+            h1,h2{
+                text-shadow: 1px 1.5px #808080;
+            }
+            hr{
+               border : 1.5px inset #3e4f5e;
+            }
+            #editButt{
+                border : 1px inset #3e4f5e;
+            }
+        </style>
     </head>
     <body>
 
         <div class="container">   
 
             <h1><b>Edit Subject  <i class="glyphicon glyphicon-cog"></i></b></h1>
-
-            <hr>
 
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">                  
@@ -36,8 +40,9 @@
                 </div>
             </nav>
 
-            <hr><br>
-
+            <br>
+            <b><i class="glyphicon glyphicon-list"></i> Table Data</b>
+            <hr>
             <table class="table table-striped">
                 <tr>
                     <th>ID</th>
@@ -51,7 +56,7 @@
                     <td><%out.print(rs.getInt("id"));%></td>
                     <td><%out.print(rs.getString("name"));%></td>
                     <td><%out.print(rs.getString("course_id"));%></td>
-
+                    <td><input type="radio" name = "selectValue" value="<%out.print(rs.getInt("id"));%>"></td>
                 </tr>
                 <%}%> 
 
@@ -61,10 +66,9 @@
 
             <h2><b>Edit new value <i class="glyphicon glyphicon-edit"></i></b></h2>
 
-            <form method="post" action="Esubject">        
+            <form method="POST" action="Esubject">        
                 <div class="form-group">
-                    <b>id : </b>
-                    <input type="text"  name="id" class="form-control" placeholder="enter id of subject">
+                    <input type="hidden"  name="id" class="form-control" placeholder="enter id of subject" value="">
                 </div>
                 <div class="form-group">
                     <b>Edit name to : </b>
@@ -75,7 +79,7 @@
                     <input type="text" name="course_id" class="form-control" placeholder="enter new course id">
                 </div>
 
-                <button type="submit" class="btn btn-default">OK</button>
+                <button id="editButt" type="submit" class="btn btn-default">Edit</button>
             </form>  
 
         </div>

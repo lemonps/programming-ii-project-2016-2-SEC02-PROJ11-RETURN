@@ -52,6 +52,10 @@
         <servlet-name>Subscribe1</servlet-name>
         <servlet-class>model.Subscribe1</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CalculusServ</servlet-name>
+        <servlet-class>SubServ.CalculusServ</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Search</servlet-name>
         <url-pattern>/Search</url-pattern>
@@ -99,6 +103,10 @@
     <servlet-mapping>
         <servlet-name>Subscribe1</servlet-name>
         <url-pattern>/Subscribe1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CalculusServ</servlet-name>
+        <url-pattern>/CalculusServ</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
