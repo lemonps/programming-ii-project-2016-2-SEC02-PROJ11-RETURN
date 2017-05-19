@@ -21,6 +21,12 @@
             h1,h2{
                 text-shadow: 1px 1.5px #808080;
             }
+            hr{
+               border : 1.5px inset #3e4f5e;
+            }
+            #editButt{
+                border : 1px inset #3e4f5e;
+            }
         </style>
     </head>
     <body>
@@ -28,8 +34,6 @@
         <div class="container">   
 
             <h1><b>Edit Subject  <i class="glyphicon glyphicon-cog"></i></b></h1>
-
-            <hr>
 
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">                  
@@ -42,8 +46,9 @@
                 </div>
             </nav>
 
-            <hr><br>
-            <b>Table Data</b>
+            <br>
+            <b><i class="glyphicon glyphicon-list"></i> Table Data</b>
+            <hr>
             <table class="table table-striped">
                 <tr>
                     <th>ID</th>
@@ -80,7 +85,7 @@
                     <input type="text" name="course_id" class="form-control" placeholder="enter new course id">
                 </div>
 
-                <button type="submit" class="btn btn-default">OK</button>
+                <button id="editButt" type="submit" class="btn btn-default">Edit</button>
             </form>  
 
         </div>

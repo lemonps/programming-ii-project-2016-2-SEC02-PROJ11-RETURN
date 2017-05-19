@@ -20,13 +20,19 @@
             h1,h2{
                 text-shadow: 1px 1.5px #808080;
             }
+            hr{
+               border : 1.5px inset #3e4f5e;
+            }
+            #deleteButt{
+                border : 1px inset #3e4f5e;
+            }
         </style>
     </head>
     <body>
         <div class="container">
 
             <h1><b>Delete Subject <i class="glyphicon glyphicon-trash"></i></b></h1>
-            <hr>
+
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">                  
                     <ul class="nav navbar-nav">
@@ -39,8 +45,9 @@
             </nav>
 
             <form action="Delete">
+              
+                <b><i class="glyphicon glyphicon-list"></i> Table Data</b>  
                 <hr>
-                <b>Table Data</b>
                 <table class="table table-striped">
                     <tr><th>ID</th><th>Name</th><th>Course_id</th><th>Delete</th></tr>
 
@@ -54,7 +61,7 @@
                     </tr>
                     <%}%> 
                 </table>
-                <input type="submit" onclick="location.reload(true)" class="btn btn-default" value="Delete">
+                <input id="deleteButt" type="submit" onclick="location.reload(true)" class="btn btn-default" value="Delete">
             </form>    
         </div>
     </body>
