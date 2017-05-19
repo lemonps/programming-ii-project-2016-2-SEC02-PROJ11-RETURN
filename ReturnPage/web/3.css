@@ -1,13 +1,27 @@
 body{
-	background-color: #111122;
+    background-color: #111122;
+    display:flex;
+    float:right;
 }
 
 hr{
     border : 2px solid #FFFACD;
+    display:flex;
+    
+        float:right;
+
 }
 
-h1,h2,span,p,td,th{
-        color:#FFFFE0;
-        text-shadow : 1px 2px black;
+h1,h2,span,td,th,p{
+    color:#FFFFE0;
+    text-shadow : 1px 2px black;
+    display:flex;
+        float:right;
+
+}
+#pz{
+    display:flex;
+        float:right;
+
 }
 
